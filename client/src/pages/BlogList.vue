@@ -66,18 +66,27 @@ onMounted(async () => {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: 600px) {
+        padding: 1rem;
+    }
 }
 .blog-area {
     display: grid;
     grid-template-columns: auto;
     gap: 2rem;
     width: 50%;
+    margin-bottom: 4rem;
 }
 .blog-post {
     display: grid;
     grid-template-columns: 0.25fr 1.75fr;
     background: var(--secondaryColor);
     border-radius: 0.25rem;
+
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
 }
 .blog-image {
     height: 12rem;

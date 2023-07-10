@@ -28,6 +28,12 @@
   -webkit-text-size-adjust: 100%;
 }
 
+@media (min-width: 1024px) {
+  body {
+    padding: 0 15rem;
+  }
+}
+
 html {
   overflow:   scroll;
 }

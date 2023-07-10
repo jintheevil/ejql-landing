@@ -33,7 +33,7 @@
     </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
 .main-footer {
     width: 100vw;
     display: grid;
@@ -41,6 +41,20 @@
     background: var(--primaryColor);
     padding-top: 2rem;
     color: var(--textColor);
+    margin-left: -15rem;
+
+    @media (max-width: 600px) {
+        margin-left: 0;
+    }
+}
+h2 {
+    font-size: 2rem;
+    line-height: 3rem;
+
+    @media (max-width: 600px) {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+    }
 }
 .socials {
     display: grid;
@@ -50,9 +64,26 @@
     padding: 2rem;
 }
 small {
+    font-size: 1rem;
+    line-height: 1.5rem;
     padding-bottom: 1.5rem;
+
+    @media (max-width: 600px) {
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+    }
 }
 .icon-color {
     color: var(--textColor);
+
+    svg {
+        height: 3rem;
+        width: 3rem;
+
+        @media (max-width: 600px) {
+            height: 2rem;
+            width: 2rem;
+        }
+    }
 }
 </style>

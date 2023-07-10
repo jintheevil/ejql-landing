@@ -29,7 +29,7 @@ const slides = [
           <h2 class="accentFont">
               a Full-Stack Developer with nothing but a dream and a passion.
           </h2>
-          <h4>
+          <h4 class="introduction-text">
               I'm a self-taught web/mobile developer with more than 2 years of professional experience.
               <br>
               Delivering you a practical, aesthetic, and professional website is my passion, growing your business is my purpose.
@@ -61,27 +61,13 @@ const slides = [
           </div>
       </div>
       <div class="section3-area">
-          <h1 class="projects-h1">Past Projects</h1>
+          <div>
+              <h1 class="projects-h1">Past Projects</h1>
+              <h2 class="projects-h2">and constantly adding more...</h2>
+          </div>
           <Flicking :options="{ circular: true }">
-              <a href="https://www.hugemaxsolutions.com.my" target="_blank">
-                  <img class="panel" alt="#" src="../assets/projects/hugemax-website.png"/>
-              </a>
-              <a href="https://www.hugemaxsolutions.com.my" target="_blank">
-                  <img class="panel" alt="#" src="../assets/projects/hugemax-website.png"/>
-              </a>
-              <a href="https://www.hugemaxsolutions.com.my" target="_blank">
-                  <img class="panel" alt="#" src="../assets/projects/hugemax-website.png"/>
-              </a>
-              <a href="https://www.hugemaxsolutions.com.my" target="_blank">
-                  <img class="panel" alt="#" src="../assets/projects/hugemax-website.png"/>
-              </a>
-              <a href="https://www.hugemaxsolutions.com.my" target="_blank">
-                  <img class="panel" alt="#" src="../assets/projects/hugemax-website.png"/>
-              </a>
-              <a href="https://www.hugemaxsolutions.com.my" target="_blank">
-                  <img class="panel" alt="#" src="../assets/projects/hugemax-website.png"/>
-              </a>
-              <a href="https://www.hugemaxsolutions.com.my" target="_blank">
+              <a class="flick-panel" href="https://www.hugemaxsolutions.com.my" target="_blank">
+                  <h4 class="flick-title">Hugemax Solutions Sdn. Bhd.</h4>
                   <img class="panel" alt="#" src="../assets/projects/hugemax-website.png"/>
               </a>
           </Flicking>
@@ -99,29 +85,45 @@ const slides = [
     min-height: 100vh;
     padding: 5rem;
     color: var(--primaryColor);
+    overflow: hidden;
 
     @media (max-width: 600px) {
         padding: 1rem;
         height: calc(100vh);
+        width: auto;
     }
     h1 {
         font-size: 3rem;
         line-height: 4.5rem;
         letter-spacing: -2%;
+        overflow-wrap: break-word;
     }
     h2 {
         font-size: 2rem;
         line-height: 3rem;
+        overflow-wrap: break-word;
     }
     h4 {
         font-size: 1.5rem;
         line-height: 2.25rem;
+        overflow-wrap: break-word;
     }
 }
 .accentFont {
     color: var(--accentColor);
+
+    @media (max-width: 600px) {
+        font-size: 1.5rem !important;
+    }
+}
+.introduction-text {
+    @media (max-width: 600px) {
+        font-size: 1.2rem !important;
+        white-space: pre-wrap;
+    }
 }
 .section2-area {
+    margin: 0 -15rem;
     min-height: 100vh;
     background: var(--backgroundColor);
     display: grid;
@@ -129,9 +131,15 @@ const slides = [
     place-items: center;
 
     @media (max-width: 600px) {
+        margin: 0;
         height: auto;
         padding: 1rem;
         grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    @media (min-width: 1024px) {
+        padding: 0 15rem;
     }
 }
 .card-border {
@@ -153,6 +161,7 @@ const slides = [
 .introduction-contact {
     padding-right: 4rem;
     color: var(--textColor);
+    overflow: hidden;
 
     @media (max-width: 600px) {
         padding-right: 0;
@@ -160,10 +169,12 @@ const slides = [
     h2 {
         font-size: 2rem;
         line-height: 3rem;
+        overflow-wrap: break-word;
     }
     h4 {
         font-size: 1rem;
         line-height: 1.5rem;
+        overflow-wrap: break-word;
     }
 }
 .introduction-card {
@@ -176,6 +187,7 @@ const slides = [
 
     @media(max-width: 600px) {
         margin-right: 0;
+        grid-template-columns: 0.2fr 0.7fr;
     }
 }
 .section3-area {
@@ -184,9 +196,46 @@ const slides = [
     min-height: 100vh;
     padding: 5rem;
     overflow: hidden;
+
+    @media (max-width: 600px) {
+      padding: 1rem;
+    }
 }
 .projects-h1 {
+    color: var(--primaryColor);
+    font-size: 4rem;
+    line-height: 6rem;
+
+    @media (max-width: 600px) {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+}
+.projects-h2 {
+    color: var(--accentColor);
+    font-size: 3rem;
+    line-height: 4.5rem;
+
+    @media (max-width: 600px) {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+    }
+}
+.flick-panel {
+    display: grid;
+    place-items: center;
+}
+.flick-title {
     color: var(--textColor);
+    font-size: 2rem;
+    line-height: 3rem;
+    text-decoration: underline;
+    margin-bottom: 1rem;
+
+    @media (max-width: 600px) {
+        font-size: 1.2rem;
+        line-height: 3.3rem;
+    }
 }
 .panel {
     height: auto;
@@ -194,5 +243,10 @@ const slides = [
     margin-right: 2rem;
     background: #fafafa;
     object-fit: cover;
+
+    @media (max-width: 600px) {
+        width: 20rem;
+        margin-left: 2rem;
+    }
 }
 </style>
