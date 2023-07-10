@@ -1,1 +1,25 @@
-# ejql-landing
+# My personal website
+
+Hi there! This is the code repository for my personal website that is open to the public for viewing purposes. Provided in the README is all the information regarding the website so that you can have a better understanding of how it's built.
+
+## Technologies used
+
+### Client
+- Frontend: Vue3
+- UI Libraries: Bootstrap
+- WYSIWYG Editor: Quill Editor
+- State Management: Pinia
+
+### Server
+- Backend: Express.js
+- Database: MongoDB
+
+## Functionalities
+
+### Blog
+
+The website comes with a blog functionality that allows visitors to read my journey as a web developer.
+
+### Dark Mode
+
+The website has a dark mode toggle created with CSS and is dynamically changed based on the settings state.
