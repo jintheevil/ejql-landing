@@ -2,6 +2,13 @@
 
 Hi there! This is the code repository for my personal website that is open to the public for viewing purposes. Provided in the README is all the information regarding the website so that you can have a better understanding of how it's built.
 
+## Guide
+
+1. `npm i` to download all dependencies
+2. `yarn start` or `npm run start` to serve both frontend and backend in a local environment
+
+PS: Note that you will not be able to access the database.
+
 ## Technologies used
 
 ### Client
