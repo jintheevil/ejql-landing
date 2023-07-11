@@ -41,9 +41,9 @@
     background: var(--primaryColor);
     padding-top: 2rem;
     color: var(--textColor);
-    margin-left: -15rem;
+    margin-left: -10rem;
 
-    @media (max-width: 600px) {
+    @media (max-width: 1181px) {
         margin-left: 0;
     }
 }

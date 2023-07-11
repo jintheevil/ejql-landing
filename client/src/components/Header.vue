@@ -71,7 +71,10 @@ const navItems = [
 }
 .hello-logo {
     font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
     color: var(--primaryColor);
+    margin: 0;
 }
 .main-header {
     height: 5rem;
@@ -81,7 +84,7 @@ const navItems = [
     padding: 0 5rem;
     position: relative;
 
-    @media (max-width: 600px) {
+    @media (max-width: 1181px) {
         padding: 0 1rem;
         position: sticky;
         top: 0;
@@ -95,9 +98,9 @@ const navItems = [
 }
 .nav-bar {
     display: flex;
-    gap: 4rem;
+    gap: 2rem;
 
-    @media (max-width: 600px) {
+    @media (max-width: 1181px) {
         display: none;
     }
 }
@@ -106,14 +109,14 @@ const navItems = [
     padding: 1rem;
     border-radius: 0.5rem;
     transition: transform 0.25s ease-in-out;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 .nav-link:hover {
     color: var(--accentColor);
     transform: translateY(-0.5rem);
     transition: all 0.125s ease-in;
 
-    @media (max-width: 600px) {
+    @media (max-width: 1181px) {
         transform: none;
     }
 }
@@ -124,7 +127,7 @@ const navItems = [
     position: relative;
     display: inline-block;
 
-    @media (min-width: 600px) {
+    @media (min-width: 1181px) {
         display: none;
     }
 }
@@ -167,7 +170,7 @@ const navItems = [
 }
 
 .desktop-toggle {
-    @media (max-width: 600px) {
+    @media (max-width: 1181px) {
         display: none;
     }
 }

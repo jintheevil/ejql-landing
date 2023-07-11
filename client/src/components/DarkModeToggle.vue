@@ -25,7 +25,7 @@ watch(dark, (newValue) => {
 </script>
 
 <template>
-  <div style="margin: 5rem">
+  <div style="margin: 1rem">
       <div class="dark-mode-toggle" :class=" !dark ? 'day' : 'night' " @click="toggleMode">
           <div :class=" !dark ? 'sun' : 'moon' "></div>
       </div>

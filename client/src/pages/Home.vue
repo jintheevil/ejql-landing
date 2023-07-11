@@ -123,14 +123,14 @@ const slides = [
     }
 }
 .section2-area {
-    margin: 0 -15rem;
+    margin: 0 -10rem;
     min-height: 100vh;
     background: var(--backgroundColor);
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
 
-    @media (max-width: 600px) {
+    @media (max-width: 1181px) {
         margin: 0;
         height: auto;
         padding: 1rem;
@@ -138,19 +138,19 @@ const slides = [
         gap: 4rem;
     }
 
-    @media (min-width: 1024px) {
-        padding: 0 15rem;
+    @media (min-width: 1181px) {
+        padding: 0 10rem;
     }
 }
 .card-border {
     border: 0.5rem solid var(--accentColor);
-    height: 30rem;
-    width: 30rem;
+    height: 30vw;
+    width: 30vw;
     padding: 0.5rem;
 
-    @media (max-width: 600px) {
-        height: calc(100vw - 4rem);
-        width: calc(100vw - 4rem);
+    @media (max-width: 1181px) {
+        height: 50vw;
+        width: 50vw;
     }
 }
 .card-body {
@@ -159,7 +159,6 @@ const slides = [
     width: 100%;
 }
 .introduction-contact {
-    padding-right: 4rem;
     color: var(--textColor);
     overflow: hidden;
 
@@ -244,7 +243,7 @@ const slides = [
     background: #fafafa;
     object-fit: cover;
 
-    @media (max-width: 600px) {
+    @media (max-width: 1181px) {
         width: 20rem;
         margin-left: 2rem;
     }
