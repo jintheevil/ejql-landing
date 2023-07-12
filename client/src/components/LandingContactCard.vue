@@ -1,0 +1,101 @@
+<script setup>
+
+</script>
+
+<template>
+    <div class="section2-area">
+        <div class="card-border">
+            <div class="card-body"></div>
+        </div>
+        <div>
+            <div class="introduction-contact">
+                <h2>Software Developer / Engineer</h2>
+                <h4>
+                    As a self-taught software developer/engineer with over 2 years of experience, I am driven by curiosity and a passion for coding. Working with diverse clients, I've honed my skills across various tech stacks, always seeking to expand my knowledge.
+                    <br><br>
+                    I enjoy crafting elegant code and solving complex problems. My goal is to deliver practical and efficient software solutions tailored to the unique needs of each project. Collaborating with clients to bring their ideas to life and make a positive impact in the digital world through innovation is what motivates me.
+                </h4>
+                <div class="introduction-card">
+                    <h4>Name:</h4>
+                    <h4>Eugene Lim</h4>
+                    <h4>Location:</h4>
+                    <h4>Malaysia</h4>
+                    <h4>Phone:</h4>
+                    <h4>+6012 - 321 - 3929</h4>
+                    <h4>Email:</h4>
+                    <h4>eugenelimjq1217@gmail.com</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style lang="scss" scoped>
+.section2-area {
+  margin: 0 -10rem;
+  min-height: 100vh;
+  background: transparent;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+
+  @media (max-width: 1181px) {
+    margin: 0;
+    height: auto;
+    padding: 1rem;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  @media (min-width: 1181px) {
+    padding: 0 10rem;
+  }
+}
+.card-border {
+  border: 0.5rem solid var(--accentColor);
+  height: 30vw;
+  width: 30vw;
+  padding: 0.5rem;
+
+  @media (max-width: 1181px) {
+    height: 50vw;
+    width: 50vw;
+  }
+}
+.card-body {
+  background: var(--primaryColor);
+  height: 100%;
+  width: 100%;
+}
+.introduction-contact {
+  color: var(--textColor);
+  overflow: hidden;
+
+  @media (max-width: 600px) {
+    padding-right: 0;
+  }
+  h2 {
+    font-size: 2rem;
+    line-height: 3rem;
+    overflow-wrap: break-word;
+  }
+  h4 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    overflow-wrap: break-word;
+  }
+}
+.introduction-card {
+  margin-top: 3rem;
+  margin-right: 15rem;
+  display: grid;
+  place-items: flex-start;
+  grid-template-columns: 0.3fr 0.7fr;
+  gap: 1rem;
+
+  @media(max-width: 600px) {
+    margin-right: 0;
+    grid-template-columns: 0.2fr 0.7fr;
+  }
+}
+</style>

@@ -38,10 +38,12 @@
     width: 100vw;
     display: grid;
     place-items: center;
-    background: var(--primaryColor);
+    background: var(--backgroundColor);
     padding-top: 2rem;
     color: var(--textColor);
     margin-left: -10rem;
+    position: relative;
+    scroll-snap-align: start !important;
 
     @media (max-width: 1181px) {
         margin-left: 0;

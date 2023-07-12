@@ -3,6 +3,9 @@ import './style.css'
 import '../src/scss/styles.scss'
 import App from './App.vue'
 
+// Import Particles
+import Particles from 'vue3-particles';
+
 // Import Pinia
 import { createPinia } from 'pinia';
 
@@ -32,6 +35,7 @@ createApp(App)
     .use(router)
     .use(VueAxios, axios)
     .use(pinia)
+    .use(Particles)
     .component('QuillEditor', QuillEditor)
     .component('facebook-icon', Facebook)
     .component('whatsapp-icon', Whatsapp)

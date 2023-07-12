@@ -1,0 +1,126 @@
+<script setup>
+</script>
+
+<template>
+    <div class="section1-area">
+        <h1>Hi, I'm Eugene</h1>
+        <h2 class="accentFont">
+            a Full-Stack Developer with nothing but a dream and a passion.
+        </h2>
+        <h4 class="introduction-text">
+            I'm a self-taught web/mobile developer with more than 2 years of professional experience.
+            <br>
+            Delivering you a practical, aesthetic, and professional website is my passion, growing your business is my purpose.
+        </h4>
+        <div class="scroll-down-area">
+            <div class="scroll-down-arrow"></div>
+            <div class="scroll-down-arrow"></div>
+            <div class="scroll-down-arrow"></div>
+        </div>
+    </div>
+</template>
+
+<style lang="scss" scoped>
+.section1-area {
+    position: relative;
+    min-height: 100vh;
+    padding: 5rem;
+    color: var(--primaryColor);
+    overflow: hidden;
+
+    @media (max-width: 600px) {
+        padding: 1rem;
+        height: calc(100vh);
+        width: auto;
+    }
+    h1 {
+        font-size: 3rem;
+        line-height: 4.5rem;
+        letter-spacing: -2%;
+        overflow-wrap: break-word;
+    }
+    h2 {
+        font-size: 2rem;
+        line-height: 3rem;
+        overflow-wrap: break-word;
+    }
+    h4 {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        overflow-wrap: break-word;
+    }
+}
+.accentFont {
+    color: var(--accentColor);
+
+    @media (max-width: 600px) {
+        font-size: 1.5rem !important;
+    }
+}
+.introduction-text {
+    @media (max-width: 600px) {
+        font-size: 1.2rem !important;
+        white-space: pre-wrap;
+    }
+}
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+h1::after {
+    content: '|';
+    margin-left: 0.5rem;
+    animation: blink 1s infinite;
+}
+
+.scroll-down-area {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    margin: 10rem auto;
+    display: grid;
+    place-items: center;
+
+    h2 {
+        margin-top: 5rem;
+        font-size: 5rem;
+        line-height: 7.5rem;
+    }
+}
+
+.scroll-down-arrow {
+    position: relative;
+    border-left: 5rem solid transparent;
+    border-right: 5rem solid transparent;
+    border-top: 25px solid var(--primaryColor);
+}
+
+@keyframes scroll-down {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    20%, 80% {
+        transform: translateY(0);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(300%);
+        opacity: 0;
+    }
+}
+
+.scroll-down-arrow {
+    animation: scroll-down 5s infinite;
+    margin-bottom: 1rem;
+}
+</style>
