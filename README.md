@@ -30,3 +30,8 @@ The website comes with a blog functionality that allows visitors to read my jour
 ### Dark Mode
 
 The website has a dark mode toggle created with CSS and is dynamically changed based on the settings state.
+
+### To-Do-List
+1. Update UI
+2. Review code
+3. Get opinions for improvement
