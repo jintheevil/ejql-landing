@@ -5,27 +5,35 @@
     <div class="section1-area">
         <h1>Hi, I'm Eugene</h1>
         <h2 class="accentFont">
-            a Full-Stack Developer with nothing but a dream and a passion.
+            a <span class="accentFont">Full-stack Web Developer</span>
         </h2>
         <h4 class="introduction-text">
             I'm a self-taught web/mobile developer with more than 2 years of professional experience.
             <br>
             Delivering you a practical, aesthetic, and professional website is my passion, growing your business is my purpose.
         </h4>
-        <div class="scroll-down-area">
-            <div class="scroll-down-arrow"></div>
-            <div class="scroll-down-arrow"></div>
-            <div class="scroll-down-arrow"></div>
-        </div>
+<!--        <div class="scroll-down-area">-->
+<!--            <div class="scroll-down-arrow"></div>-->
+<!--            <div class="scroll-down-arrow"></div>-->
+<!--            <div class="scroll-down-arrow"></div>-->
+<!--        </div>-->
+<!--        <div class="see-more-container">-->
+<!--            <p class="animate-letter" style="&#45;&#45;delay: 0.5s">S</p>-->
+<!--            <p class="animate-letter" style="&#45;&#45;delay: 0.7s">E</p>-->
+<!--            <p class="animate-letter" style="&#45;&#45;delay: 0.9s">E</p>-->
+<!--            <p class="animate-letter" style="&#45;&#45;delay: 1.1s">M</p>-->
+<!--            <p class="animate-letter" style="&#45;&#45;delay: 1.3s">O</p>-->
+<!--            <p class="animate-letter" style="&#45;&#45;delay: 1.5s">R</p>-->
+<!--            <p class="animate-letter" style="&#45;&#45;delay: 1.7s">E</p>-->
+<!--        </div>-->
     </div>
 </template>
 
 <style lang="scss" scoped>
 .section1-area {
-    position: relative;
     min-height: 100vh;
     padding: 5rem;
-    color: var(--primaryColor);
+    color: var(--textColor);
     overflow: hidden;
 
     @media (max-width: 600px) {
@@ -78,7 +86,6 @@ h1::after {
 }
 
 .scroll-down-area {
-    position: relative;
     width: 100%;
     height: 5rem;
     margin: 10rem auto;
@@ -93,7 +100,6 @@ h1::after {
 }
 
 .scroll-down-arrow {
-    position: relative;
     border-left: 5rem solid transparent;
     border-right: 5rem solid transparent;
     border-top: 25px solid var(--primaryColor);
@@ -122,5 +128,33 @@ h1::after {
 .scroll-down-arrow {
     animation: scroll-down 5s infinite;
     margin-bottom: 1rem;
+}
+
+.see-more-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes rightIn {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    50% {
+        opacity: 0.3;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-letter {
+    font-size: 2em;
+    animation: rightIn 1s ease-in forwards var(--delay);
+    opacity: 0;
 }
 </style>

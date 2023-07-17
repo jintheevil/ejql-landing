@@ -1,16 +1,16 @@
 :root {
   --textColor: #ffffff;
   --backgroundColor: #1c1a23;
-  --primaryColor: #4281ff;
-  --secondaryColor: #eaeaea;
-  --accentColor: #f43487;
+  --primaryColor: #212121;
+  --secondaryColor: #f5f5f5;
+  --accentColor: #4281ff;
 
-  --headerColor: #1858bb;
-  --lightModeBackground: #f8f8f8;
-  --darkModeBackground: #1c1a23;
+  --headerColor: #003d73;
+  --lightModeBackground: #f5f5f5;
+  --darkModeBackground: #212121;
 
-  --darkModeText: #ffffff;
-  --lightModeText: #333;
+  --darkModeText: #f5f5f5;
+  --lightModeText: #212121;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

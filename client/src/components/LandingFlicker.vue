@@ -53,7 +53,7 @@ const flickRight = () => {
     text-align: center;
 }
 .projects-h1 {
-  color: var(--primaryColor);
+  color: var(--accentColor);
   font-size: 4rem;
   line-height: 6rem;
 

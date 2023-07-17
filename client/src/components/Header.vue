@@ -15,21 +15,25 @@ const navItems = [
         name: 'Home',
         label: 'HOME',
         route: '/',
+        id: 'landing',
     },
     {
         name: 'About',
         label: 'ABOUT',
         route: '/about',
+        id: 'about',
     },
     {
-        name: 'Blog',
-        label: 'BLOG',
-        route: '/blog',
+        name: 'Services',
+        label: 'SERVICES',
+        route: '/services',
+        id: 'services',
     },
     {
         name: 'Projects',
         label: 'PROJECTS',
         route: '/projects',
+        id: 'projects',
     },
 
 ]
@@ -42,11 +46,12 @@ const navItems = [
       <div class="navbar-brand">
           <h4 class="hello-logo">WELCOME!</h4>
       </div>
-<!--      <div class="nav-bar">-->
-<!--          <div v-for="navItem in navItems" class="nav-item">-->
-<!--              <router-link class="nav-link" :class="currentRouter === navItem.name ? 'active' : ' '"  :to="navItem.route">{{ navItem.name }}</router-link>-->
-<!--          </div>-->
-<!--      </div>-->
+      <div class="nav-bar">
+          <div v-for="navItem in navItems" class="nav-item">
+<!--              <router-link class="nav-link" :class="currentRouter === navItem.name ? 'active' : ' '"  :to=" '#' + navItem.id ">{{ navItem.name }}</router-link>-->
+              <a class="nav-link" :class="currentRouter === navItem.name ? 'active' : ' '"  :href=" '#' + navItem.id ">{{ navItem.name }}</a>
+          </div>
+      </div>
       <DarkModeToggle></DarkModeToggle>
 <!--      <div class="dropdown">-->
 <!--          <a class="btn dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
@@ -66,14 +71,12 @@ const navItems = [
 <style scoped>
 .empty {
     display: none;
-
-
 }
 .hello-logo {
     font-weight: 800;
     font-size: 1.5rem;
     line-height: 2.25rem;
-    color: var(--primaryColor);
+    color: var(--accentColor);
     margin: 0;
 }
 .main-header {
@@ -83,14 +86,18 @@ const navItems = [
     justify-content: space-between;
     padding: 0 5rem;
     position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: var(--backgroundColor);
 
     @media (max-width: 1181px) {
         padding: 0 1rem;
-        position: sticky;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        background: var(--backgroundColor);
+        //position: sticky;
+        //top: 0;
+        //left: 0;
+        //z-index: 2;
+        //background: var(--backgroundColor);
     }
 }
 .btn {
@@ -150,7 +157,7 @@ const navItems = [
     position: absolute;
     background-color: var(--primaryColor);
     min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
     right: 0;
 }

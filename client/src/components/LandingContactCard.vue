@@ -63,7 +63,7 @@
   }
 }
 .card-body {
-  background: var(--primaryColor);
+  background: var(--textColor);
   height: 100%;
   width: 100%;
 }

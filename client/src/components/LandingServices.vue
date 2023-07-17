@@ -45,7 +45,7 @@
   display: grid;
   place-items: center;
   min-height: 100vh;
-  padding: 5rem;
+  padding: 5rem 0;
   overflow: hidden;
 
   @media (max-width: 1181px) {
@@ -53,7 +53,7 @@
   }
 }
 .services-h1 {
-  color: var(--primaryColor);
+  color: var(--accentColor);
   font-size: 3rem;
   line-height: 4.5rem;
 
@@ -63,7 +63,6 @@
   }
 }
 .services-container {
-  padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5vw;
@@ -88,7 +87,7 @@
   color: var(--textColor);
   padding: 2rem;
   background: var(--backgroundColor);
-  border: 0.5rem solid var(--accentColor);
+  border: 0.5rem solid var(--textColor);
   border-radius: 0.5rem;
 
   @media (max-width: 1181px) {
