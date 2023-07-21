@@ -33,7 +33,7 @@
 <style lang="scss" scoped>
 .section2-area {
   margin: 0 -10rem;
-  min-height: 100vh;
+  min-height: calc(100vh - 5rem);
   background: transparent;
   display: grid;
   grid-template-columns: 1fr 1fr;

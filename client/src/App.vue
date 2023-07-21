@@ -6,7 +6,7 @@ import {ParticlesComponent} from "vue3-particles";
 import {loadFull} from "tsparticles";
 
 import {useSettingsStore} from "./store/SettingsModel.js";
-import { defineEmits, withDefaults, computed, watch} from "vue";
+import { defineEmits, withDefaults, computed, watch } from "vue";
 
 const emit = defineEmits(['settings-changed']);
 
@@ -30,9 +30,22 @@ const particlesLoaded = async container => {
 
 <template>
   <Header></Header>
-  <router-view></router-view>
+  <transition name="fade" mode="out-in">
+      <router-view :key="$route.fullPath"></router-view>
+  </transition>
   <Footer></Footer>
 </template>
 
-<style scoped>
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to, .fade-leave-from {
+  opacity: 1;
+}
 </style>

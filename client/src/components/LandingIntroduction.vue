@@ -12,20 +12,6 @@
             <br>
             Delivering you a practical, aesthetic, and professional website is my passion, growing your business is my purpose.
         </h4>
-<!--        <div class="scroll-down-area">-->
-<!--            <div class="scroll-down-arrow"></div>-->
-<!--            <div class="scroll-down-arrow"></div>-->
-<!--            <div class="scroll-down-arrow"></div>-->
-<!--        </div>-->
-<!--        <div class="see-more-container">-->
-<!--            <p class="animate-letter" style="&#45;&#45;delay: 0.5s">S</p>-->
-<!--            <p class="animate-letter" style="&#45;&#45;delay: 0.7s">E</p>-->
-<!--            <p class="animate-letter" style="&#45;&#45;delay: 0.9s">E</p>-->
-<!--            <p class="animate-letter" style="&#45;&#45;delay: 1.1s">M</p>-->
-<!--            <p class="animate-letter" style="&#45;&#45;delay: 1.3s">O</p>-->
-<!--            <p class="animate-letter" style="&#45;&#45;delay: 1.5s">R</p>-->
-<!--            <p class="animate-letter" style="&#45;&#45;delay: 1.7s">E</p>-->
-<!--        </div>-->
     </div>
 </template>
 

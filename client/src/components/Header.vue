@@ -16,24 +16,28 @@ const navItems = [
         label: 'HOME',
         route: '/',
         id: 'landing',
+        href: '#',
     },
     {
         name: 'About',
         label: 'ABOUT',
         route: '/about',
         id: 'about',
+        href: '#about',
     },
     {
         name: 'Services',
         label: 'SERVICES',
         route: '/services',
         id: 'services',
+        href: '#services',
     },
     {
         name: 'Projects',
         label: 'PROJECTS',
         route: '/projects',
         id: 'projects',
+        href: '#projects',
     },
 
 ]
@@ -48,8 +52,8 @@ const navItems = [
       </div>
       <div class="nav-bar">
           <div v-for="navItem in navItems" class="nav-item">
-<!--              <router-link class="nav-link" :class="currentRouter === navItem.name ? 'active' : ' '"  :to=" '#' + navItem.id ">{{ navItem.name }}</router-link>-->
-              <a class="nav-link" :class="currentRouter === navItem.name ? 'active' : ' '"  :href=" '#' + navItem.id ">{{ navItem.name }}</a>
+              <router-link class="nav-link" :class="currentRouter === navItem.name ? 'active' : ' '"  :to=" navItem.route ">{{ navItem.name }}</router-link>
+<!--              <a class="nav-link" :class="currentRouter === navItem.name ? 'active' : ' '"  :href="navItem.href">{{ navItem.name }}</a>-->
           </div>
       </div>
       <DarkModeToggle></DarkModeToggle>

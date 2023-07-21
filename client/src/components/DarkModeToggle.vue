@@ -1,5 +1,5 @@
 <script setup>
-import {computed, ref, watch} from "vue";
+import { computed, ref, watch } from "vue";
 import { useSettingsStore } from "../store/SettingsModel.js"
 
 const dark = computed(() => useSettingsStore().getMode);

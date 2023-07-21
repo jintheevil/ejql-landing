@@ -45,7 +45,7 @@
   display: grid;
   place-items: center;
   min-height: 100vh;
-  padding: 5rem 0;
+  padding: 2rem 0;
   overflow: hidden;
 
   @media (max-width: 1181px) {

@@ -8,17 +8,32 @@ import CreateBlog from "../pages/CreateBlog.vue";
 import BlogList from "../pages/BlogList.vue";
 import IndividualBlog from "../pages/IndividualBlog.vue";
 
+import LandingContactCard from "../components/LandingContactCard.vue";
+import LandingServices from "../components/LandingServices.vue";
+import LandingFlicker from "../components/LandingFlicker.vue";
+import LandingIntroduction from "../components/LandingIntroduction.vue";
+
 // Routes
 const routes = [
     {
         path: '/',
-        component: Home,
+        component: LandingIntroduction,
         name: 'Home'
     },
     {
         path: '/about',
-        component: About,
+        component: LandingContactCard,
         name: 'About'
+    },
+    {
+        path: '/services',
+        component: LandingServices,
+        name: 'Services'
+    },
+    {
+        path: '/projects',
+        component: LandingFlicker,
+        name: 'Projects'
     },
     {
         path: '/blog',
