@@ -1,9 +1,6 @@
 <script setup>
 import LandingIntroduction from "../components/LandingIntroduction.vue";
-import LandingContactCard from "../components/LandingContactCard.vue";
-import LandingFlicker from "../components/LandingFlicker.vue";
-import LandingServices from "../components/LandingServices.vue";
-import Footer from "../components/Footer.vue";
+import {useSettingsStore} from "../store/SettingsModel.js";
 </script>
 
 <template>

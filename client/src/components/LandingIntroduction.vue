@@ -2,16 +2,18 @@
 </script>
 
 <template>
-    <div class="section1-area">
-        <h1>Hi, I'm Eugene</h1>
-        <h2 class="accentFont">
-            a <span class="accentFont">Full-stack Web Developer</span>
-        </h2>
-        <h4 class="introduction-text">
-            I'm a self-taught web/mobile developer with more than 2 years of professional experience.
-            <br>
-            Delivering you a practical, aesthetic, and professional website is my passion, growing your business is my purpose.
-        </h4>
+    <div>
+        <div class="section1-area">
+            <h1>Hi, I'm Eugene</h1>
+            <h2 class="accentFont">
+                a <span class="accentFont">Full-stack Web Developer</span>
+            </h2>
+            <h4 class="introduction-text">
+                Crafting digital experiences is my art. With over 2 years of hands-on expertise, I've honed the craft of web and mobile development.
+                <br>
+                I don't just build websites; I tailor solutions that amplify your brand's voice, ensuring your business doesn't just grow, but thrives.
+            </h4>
+        </div>
     </div>
 </template>
 
@@ -49,11 +51,13 @@
 
     @media (max-width: 600px) {
         font-size: 1.5rem !important;
+        line-height: 2.25rem;
     }
 }
 .introduction-text {
     @media (max-width: 600px) {
         font-size: 1.2rem !important;
+        line-height: 1.8rem;
         white-space: pre-wrap;
     }
 }

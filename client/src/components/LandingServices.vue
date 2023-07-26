@@ -1,40 +1,129 @@
 <script setup>
+import { ref, computed, onMounted } from 'vue';
 
+const activeCardIndex = ref(null);  // This will store the index of the card that's centered
+
+const servicesContainer = ref(null); // This will store the reference to our services-container
+const cards = ref([]);  // This will store references to all the service cards
+
+const isDragging = ref(false);
+const startY = ref(0);
+const scrollTop = ref(0);
+let lastY = 0;
+let speed = 1.5;
+
+const startDrag = (event) => {
+    isDragging.value = true;
+    startY.value = event.pageY - servicesContainer.value.offsetTop;
+    scrollTop.value = servicesContainer.value.scrollTop;
+    servicesContainer.value.classList.add('active');
+}
+
+const stopDrag = () => {
+    isDragging.value = false;
+    servicesContainer.value.classList.remove('active');
+}
+
+const doDrag = (event) => {
+    if(!isDragging.value) return;
+    const y = event.pageY - servicesContainer.value.offsetTop;
+    const walk = (y - startY.value);
+
+    requestAnimationFrame(() => {
+        lastY += (walk - lastY) * speed;
+        servicesContainer.value.scrollTop = scrollTop.value - lastY;
+    });
+}
+
+const checkCenteredCard = () => {
+    let centeredIndex = null;
+    let smallestDistance = Infinity;
+
+    cards.value.forEach((card, index) => {
+        const cardBounds = card.getBoundingClientRect();
+        const containerBounds = servicesContainer.value.getBoundingClientRect();
+
+        const cardCenter = cardBounds.top + cardBounds.height / 2;
+        const containerCenter = containerBounds.top + containerBounds.height / 2;
+
+        const distanceToCenter = Math.abs(cardCenter - containerCenter);
+
+        if (distanceToCenter < smallestDistance) {
+            smallestDistance = distanceToCenter;
+            centeredIndex = index;
+        }
+    });
+
+    activeCardIndex.value = centeredIndex;
+};
+
+onMounted(() => {
+    servicesContainer.value.addEventListener('dragstart', e => e.preventDefault());
+
+    // Get references to the services-container and all the service cards
+    servicesContainer.value = document.querySelector('.services-container');
+    cards.value = document.querySelectorAll('.services-card');
+
+    // Add a scroll listener to the services-container
+    servicesContainer.value.addEventListener('scroll', checkCenteredCard);
+
+    // Initially check which card is centered
+    checkCenteredCard();
+});
+
+// This computed property will give us a boolean array indicating which card is active
+const activeCards = computed(() => {
+    return services.map((_, index) => index === activeCardIndex.value);
+});
+
+const services = [
+  {
+    name: 'Full-Stack Solutions',
+    description: 'From frontend to backend, you get the whole package done.',
+    icon: '../assets/services-icons/programming.png',
+  },
+  {
+    name: 'UI Design',
+    description: 'Providing you with elegant and modern UI designs for your website.',
+    icon: '../assets/services-icons/ui-design.png',
+  },
+  {
+    name: 'UX Optimization',
+    description: 'User experience is the key to success and optimization is the name of the game.',
+    icon: '../assets/services-icons/ux-design.png',
+  },
+  {
+    name: 'Responsive',
+    description: 'Mobile or desktop, I got you covered.',
+    icon: '../assets/services-icons/ux.png',
+  },
+  {
+    name: 'Database Management',
+    description: 'Ensuring that your user data is safe and secure at all times.',
+    icon: '../assets/services-icons/database.png',
+  },
+  {
+    name: 'Satisfaction Guaranteed',
+    description: 'A 100% satisfaction guarantee.',
+    icon: '../assets/services-icons/smile.png',
+  }
+]
+
+const useImage = (url) => {
+  return new URL(url, import.meta.url).href
+}
 </script>
 
 <template>
   <div class="section3-area">
       <h1 class="services-h1">My Services</h1>
-      <div class="services-container">
-          <div class="services-card">
-              <img class="services-icon" alt="fullstack" src="../assets/services-icons/programming.png"/>
-              <h4>Full-Stack Solutions</h4>
-              <p>From frontend to backend, you get the whole package done.</p>
-          </div>
-          <div class="services-card">
-              <img class="services-icon" alt="ui" src="../assets/services-icons/ui-design.png"/>
-              <h4>UI Design</h4>
-              <p>Providing you with elegant and modern UI designs for your website.</p>
-          </div>
-          <div class="services-card">
-              <img class="services-icon" alt="ux" src="../assets/services-icons/ux-design.png"/>
-              <h4>UX Optimization</h4>
-              <p>User experience is the key to success and optimization is the name of the game.</p>
-          </div>
-          <div class="services-card">
-              <img class="services-icon" alt="responsive" src="../assets/services-icons/ux.png"/>
-              <h4>Responsiveness</h4>
-              <p>Mobile or desktop, I got you covered.</p>
-          </div>
-          <div class="services-card">
-              <img class="services-icon" alt="dbmg" src="../assets/services-icons/database.png"/>
-              <h4>Database Management</h4>
-              <p>Ensuring that your user data is safe and secure at all times.</p>
-          </div>
-          <div class="services-card">
-              <img class="services-icon" alt="satisfaction" src="../assets/services-icons/smile.png"/>
-              <h4>Satisfaction Guaranteed</h4>
-              <p>Your satisfaction is my number one priority.</p>
+      <div ref="servicesContainer" class="services-container" @mousedown="startDrag" @mouseleave="stopDrag" @mouseup="stopDrag" @mousemove="doDrag">
+          <div ref="cardContainer" v-for="(service, index) in services" :key="index" class="services-card-container">
+              <div class="services-card" :class="{ active: activeCards[index] }">
+                  <img class="services-icon" :alt="service.name" :src="useImage(service.icon)"/>
+                  <h4>{{service.name}}</h4>
+                  <p>{{service.description}}</p>
+              </div>
           </div>
       </div>
   </div>
@@ -46,7 +135,6 @@
   place-items: center;
   min-height: 100vh;
   padding: 2rem 0;
-  overflow: hidden;
 
   @media (max-width: 1181px) {
     padding: 1rem;
@@ -64,12 +152,19 @@
 }
 .services-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 5vw;
+    padding: 0 8rem;
+    max-height: 80vh;
+    overflow-y: auto;
+  place-items: center;
+  grid-template-columns: 1fr;
+    scroll-snap-type: y mandatory;
+    cursor: grab;
+    will-change: scroll-position;
+    scroll-behavior: smooth;
 
-    :hover {
-        transition: background 0.1s ease-in;
-        background: var(--primaryColor);
+    &.active {
+        cursor: grabbing;
+        user-select: none;
     }
 
   @media (max-width: 600px) {
@@ -80,7 +175,22 @@
     padding: 0;
   }
 }
+.services-card-container {
+  display: grid;
+  place-items: center;
+    scroll-snap-align: center;
+    margin: 1rem 0;
 
+    // Adjust top margin for the first child
+    &:first-child {
+        margin-top: 6rem;
+    }
+
+    // Adjust bottom margin for the last child
+    &:last-child {
+        margin-bottom: 10rem;
+    }
+}
 .services-card {
   text-align: center;
   width: 20vw;
@@ -89,6 +199,9 @@
   background: var(--backgroundColor);
   border: 0.5rem solid var(--textColor);
   border-radius: 0.5rem;
+    transform: scale(0.9);
+    opacity: 0.6;
+    transition: transform 0.4s ease;
 
   @media (max-width: 1181px) {
     width: 100%;
@@ -104,5 +217,10 @@
       width: auto;
     }
   }
+}
+
+.active {
+  transform: scale(1);
+  opacity: 1;
 }
 </style>

@@ -12,28 +12,29 @@ import LandingContactCard from "../components/LandingContactCard.vue";
 import LandingServices from "../components/LandingServices.vue";
 import LandingFlicker from "../components/LandingFlicker.vue";
 import LandingIntroduction from "../components/LandingIntroduction.vue";
+import {useSettingsStore} from "../store/SettingsModel.js";
 
 // Routes
 const routes = [
     {
         path: '/',
         component: LandingIntroduction,
-        name: 'Home'
+        name: 'Home',
     },
     {
         path: '/about',
         component: LandingContactCard,
-        name: 'About'
+        name: 'About',
     },
     {
         path: '/services',
         component: LandingServices,
-        name: 'Services'
+        name: 'Services',
     },
     {
         path: '/projects',
         component: LandingFlicker,
-        name: 'Projects'
+        name: 'Projects',
     },
     {
         path: '/blog',
@@ -55,7 +56,7 @@ const routes = [
     {
         path: '/admin/create-blog',
         component: CreateBlog,
-        name: 'Create-Blog'
+        name: 'Create-Blog',
     }
 ]
 
@@ -63,6 +64,12 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes,
+})
+
+router.beforeEach((to, from) => {
+    if (to.name !== 'Home' && !from.name) {
+        return { name: 'Home' };
+    }
 })
 
 // Export router

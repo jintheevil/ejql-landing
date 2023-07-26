@@ -6,7 +6,7 @@
         <h2 style="text-align: center;">
             Looking for a solution?
             <br>
-            Need a website to build your business?
+            Need a website to grow your business?
         </h2>
         <span style="margin-bottom: 2rem; font-size: 1.25rem;">
             Let's chat about how I can help you.
@@ -86,6 +86,11 @@ small {
             height: 2rem;
             width: 2rem;
         }
+    }
+
+    &:hover {
+        color: var(--accentColor);
+        transition: color 0.2s ease-in;
     }
 }
 </style>

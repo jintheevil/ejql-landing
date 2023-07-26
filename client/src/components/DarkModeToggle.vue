@@ -8,7 +8,6 @@ const toggleMode = () => {
     useSettingsStore().setMode();
 
     const rootStyle = document.documentElement.style;
-    console.log(rootStyle)
 }
 
 watch(dark, (newValue) => {

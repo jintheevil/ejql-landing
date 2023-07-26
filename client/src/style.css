@@ -103,17 +103,17 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-.line {
-  position: fixed;
-  left: -5rem;
-  width: 110%;
-  color: var(--primaryColor);
-  z-index: -1;
-}
+/*.line {*/
+/*  position: fixed;*/
+/*  left: -5rem;*/
+/*  width: 110%;*/
+/*  color: var(--primaryColor);*/
+/*  z-index: -1;*/
+/*}*/
 
-@media (max-width: 600px) {
-  .line {
-    padding-top: 25rem;
-    width: 130%;
-  }
-}
+/*@media (max-width: 600px) {*/
+/*  .line {*/
+/*    padding-top: 25rem;*/
+/*    width: 130%;*/
+/*  }*/
+/*}*/
