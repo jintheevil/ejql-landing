@@ -5,7 +5,7 @@ import Footer from "./components/Footer.vue";
 import {loadFull} from "tsparticles";
 
 import {useSettingsStore} from "./store/SettingsModel.js";
-import {defineEmits, withDefaults, computed, watch, onMounted} from "vue";
+import {defineEmits, ref, computed, watch, onMounted} from "vue";
 
 const emit = defineEmits(['settings-changed']);
 
@@ -27,18 +27,50 @@ const particlesLoaded = async container => {
     console.log("Particles container loaded", container);
 };
 
+let letters = ref(['E', 'L', 'J', 'Q'])
+
+const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+const setLetterWithDelay = (index, value, delay) => {
+    setTimeout(() => {
+        letters.value[index] = value;
+    }, delay);
+};
+
+const getRandomLetter = () => {
+    return alphabet[Math.floor(Math.random() * alphabet.length)];
+};
+
+let interval;
+
 onMounted(() => {
+    interval = setInterval(() => {
+        for (let i = 0; i < letters.value.length; i++) {
+            letters.value[i] = getRandomLetter();
+        }
+    }, 100);
+
+    setTimeout(() => {
+        clearInterval(interval);
+
+        const finalLetters = ['E', 'L', 'J', 'Q'];
+        for (let i = 0; i < finalLetters.length; i++) {
+            setLetterWithDelay(i, finalLetters[i], i * 150);
+        }
+    }, 1800);
+
     setTimeout(() => {
         useSettingsStore().setVisited()
-    }, 3800);
+    }, 4000);
 })
 </script>
 
 <template>
   <Header></Header>
     <div v-if="!useSettingsStore().getVisited"  class="initialVisit">
-        <h1 class="animation-text">E L J Q</h1>
-        <div class="chip-left-line line"></div>
+        <div class="animation-text">
+            <h1 v-for="(letter, index) in letters" :key="index" class="letters">{{letter}}</h1>
+        </div>
         <div class="bottom-line line"></div>
     </div>
   <transition name="fade" mode="out-in">
@@ -78,8 +110,8 @@ onMounted(() => {
 }
 
 .animation-text {
-    animation: come-in 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both, go-out 0.8s 2.4s cubic-bezier(0.550, 0.085, 0.680, 0.530) both
-
+    display: flex;
+    animation: come-in 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both, go-out 0.8s 2.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both
 }
 
 @keyframes come-in {
@@ -138,9 +170,8 @@ onMounted(() => {
     }
 }
 
-.chip-left-line {
-    bottom: 70vh;
-    width: 25vh;
+.letters {
+    margin-right: 1rem;
 }
 
 </style>

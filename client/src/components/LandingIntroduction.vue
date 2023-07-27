@@ -9,9 +9,7 @@
                 a <span class="accentFont">Full-stack Web Developer</span>
             </h2>
             <h4 class="introduction-text">
-                Crafting digital experiences is my art. With over 2 years of hands-on expertise, I've honed the craft of web and mobile development.
-                <br>
-                I don't just build websites; I tailor solutions that amplify your brand's voice, ensuring your business doesn't just grow, but thrives.
+                Crafting digital experiences is my art. With over 2 years of hands-on expertise, I've honed the craft of web and mobile development. I don't just build websites; I tailor solutions that amplify your brand's voice, ensuring your business doesn't just grow, but thrives.
             </h4>
         </div>
     </div>
