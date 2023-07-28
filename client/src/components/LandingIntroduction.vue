@@ -9,7 +9,7 @@
                 a <span class="accentFont">Full-stack Web Developer</span>
             </h2>
             <h4 class="introduction-text">
-                Crafting digital experiences is my art. With over 2 years of hands-on expertise, I've honed the craft of web and mobile development. I don't just build websites; I tailor solutions that amplify your brand's voice, ensuring your business doesn't just grow, but thrives.
+                Crafting digital experiences is my passion. With 2+ years in web and mobile development, I don't just build websites—I amplify your brand. Let's ensure your business doesn't just grow, but thrives.
             </h4>
         </div>
     </div>
@@ -48,15 +48,12 @@
     color: var(--accentColor);
 
     @media (max-width: 600px) {
-        font-size: 1.5rem !important;
-        line-height: 2.25rem;
+        //font-size: 1.5rem !important;
+        //line-height: 2.25rem;
     }
 }
 .introduction-text {
     @media (max-width: 600px) {
-        font-size: 1.2rem !important;
-        line-height: 1.8rem;
-        white-space: pre-wrap;
     }
 }
 @keyframes blink {

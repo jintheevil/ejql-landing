@@ -27,6 +27,14 @@
                 <linkedin-icon class="icon-color"
                 ></linkedin-icon>
             </a>
+            <a href="https://github.com/jintheevil" target="_blank">
+                <github-icon class="icon-color"
+                ></github-icon>
+            </a>
+            <a href="https://gitlab.com/eugenelimjq1217" target="_blank">
+                <gitlab-icon class="icon-color"
+                ></gitlab-icon>
+            </a>
         </div>
         <small>Based in Malaysia, helping all businesses big and small.</small>
         <small style="font-size: 0.65rem;">© 2023 Website Design & Business Solutions • Eugene Lim</small>
@@ -43,7 +51,6 @@
     color: var(--textColor);
     margin-left: -10rem;
     position: relative;
-    scroll-snap-align: start !important;
 
     @media (max-width: 1181px) {
         margin-left: 0;
@@ -59,10 +66,9 @@ h2 {
     }
 }
 .socials {
-    display: grid;
+    display: flex;
     place-items: center;
     gap: 2rem;
-    grid-template-columns: auto auto auto;
     padding: 2rem;
 }
 small {

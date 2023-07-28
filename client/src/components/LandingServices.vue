@@ -121,7 +121,7 @@ const useImage = (url) => {
           <div ref="cardContainer" v-for="(service, index) in services" :key="index" class="services-card-container">
               <div class="services-card" :class="{ active: activeCards[index] }">
                   <img class="services-icon" :alt="service.name" :src="useImage(service.icon)"/>
-                  <h4>{{service.name}}</h4>
+                  <h2>{{service.name}}</h2>
                   <p>{{service.description}}</p>
               </div>
           </div>

@@ -42,7 +42,7 @@ const flickRight = () => {
   display: grid;
   place-items: center;
   min-height: 100vh;
-  padding: 5rem;
+    padding-top: 2rem;
   overflow: hidden;
 
   @media (max-width: 600px) {
@@ -54,23 +54,9 @@ const flickRight = () => {
 }
 .projects-h1 {
   color: var(--accentColor);
-  font-size: 4rem;
-  line-height: 6rem;
-
-  @media (max-width: 600px) {
-    font-size: 2rem;
-    line-height: 3rem;
-  }
 }
 .projects-h2 {
   color: var(--accentColor);
-  font-size: 3rem;
-  line-height: 4.5rem;
-
-  @media (max-width: 600px) {
-    font-size: 1.5rem;
-    line-height: 2.25rem;
-  }
 }
 .flick-panel {
   display: grid;
@@ -78,15 +64,8 @@ const flickRight = () => {
 }
 .flick-title {
   color: var(--textColor);
-  font-size: 2rem;
-  line-height: 3rem;
   text-decoration: underline;
   margin-bottom: 1rem;
-
-  @media (max-width: 600px) {
-    font-size: 1.2rem;
-    line-height: 3.3rem;
-  }
 }
 .panel {
   height: auto;

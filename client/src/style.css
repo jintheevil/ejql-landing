@@ -55,17 +55,43 @@ a {
   color: #ffffff;
   text-decoration: inherit;
   display: block;
-}
-
-a {
-  font-weight: 500;
-  color: #ffffff;
-  text-decoration: inherit;
+  font-family: Merriweather, serif;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 3rem !important;
+  line-height: 4rem !important;
+  font-family: Merriweather, serif;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 3rem;
+  font-family: Merriweather, serif;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  font-family: Montserrat, serif;
+}
+
+h4 {
+  font-size: 1rem;
+  line-height: 2rem;
+  font-family: Montserrat, serif;
+}
+
+span {
+  font-family: Montserrat, serif;
+}
+
+p {
+  font-family: Montserrat, serif;
+}
+
+small {
+  font-family: Montserrat, serif;
 }
 
 button {

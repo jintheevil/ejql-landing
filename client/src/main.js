@@ -19,6 +19,8 @@ import '@vueup/vue-quill/dist/vue-quill.snow.css';
 import Facebook from "vue-material-design-icons/Facebook.vue"
 import Whatsapp from "vue-material-design-icons/Whatsapp.vue"
 import Linkedin from "vue-material-design-icons/Linkedin.vue"
+import GitHub from "vue-material-design-icons/Github.vue"
+import GitLab from "vue-material-design-icons/Gitlab.vue"
 import Menu from "vue-material-design-icons/Menu.vue"
 
 
@@ -40,5 +42,7 @@ createApp(App)
     .component('facebook-icon', Facebook)
     .component('whatsapp-icon', Whatsapp)
     .component('linkedin-icon', Linkedin)
+    .component('github-icon', GitHub)
+    .component('gitlab-icon', GitLab)
     .component('menu-icon', Menu)
     .mount('#app')

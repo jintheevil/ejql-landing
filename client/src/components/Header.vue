@@ -1,14 +1,11 @@
 <script setup>
-import { computed, onMounted } from "vue";
+import { computed } from "vue";
 import { useRouter } from "vue-router";
-import DarkModeToggle from "./DarkModeToggle.vue";
-import { useSettingsStore } from "../store/SettingsModel.js";
+import Menu from "./util/Menu.vue";
 
 const currentRouter = computed(() => {
   return useRouter().currentRoute.value.name;
 });
-
-const settings = computed(() => useSettingsStore().getMode);
 
 const navItems = [
     {
@@ -53,22 +50,9 @@ const navItems = [
       <div class="nav-bar">
           <div v-for="navItem in navItems" class="nav-item">
               <router-link class="nav-link" :class="currentRouter === navItem.name ? 'active' : ' '"  :to=" navItem.route ">{{ navItem.name }}</router-link>
-<!--              <a class="nav-link" :class="currentRouter === navItem.name ? 'active' : ' '"  :href="navItem.href">{{ navItem.name }}</a>-->
           </div>
       </div>
-      <DarkModeToggle></DarkModeToggle>
-<!--      <div class="dropdown">-->
-<!--          <a class="btn dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
-<!--              <menu-icon></menu-icon>-->
-<!--          </a>-->
-
-<!--          <div class="dropdown-menu">-->
-<!--              <div v-for="navItem in navItems" class="nav-item">-->
-<!--                  <router-link class="nav-link" :class="currentRouter === navItem.name ? 'active' : ' '"  :to="navItem.route">{{ navItem.name }}</router-link>-->
-<!--              </div>-->
-<!--              <DarkModeToggle></DarkModeToggle>-->
-<!--          </div>-->
-<!--      </div>-->
+      <Menu></Menu>
   </div>
 </template>
 
