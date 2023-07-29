@@ -12,7 +12,6 @@
   --darkModeText: #f5f5f5;
   --lightModeText: #212121;
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -55,43 +54,43 @@ a {
   color: #ffffff;
   text-decoration: inherit;
   display: block;
-  font-family: Merriweather, serif;
+  font-family: Aquire, serif !important;
 }
 
 h1 {
   font-size: 3rem !important;
   line-height: 4rem !important;
-  font-family: Merriweather, serif;
+  font-family: Aquire, serif;
 }
 
 h2 {
   font-size: 2rem;
   line-height: 3rem;
-  font-family: Merriweather, serif;
+  font-family: Aquire, serif;
 }
 
 h3 {
   font-size: 1.5rem;
   line-height: 2.25rem;
-  font-family: Montserrat, serif;
+  font-family: Orbitron, serif;
 }
 
 h4 {
   font-size: 1rem;
   line-height: 2rem;
-  font-family: Montserrat, serif;
+  font-family: Orbitron, serif;
 }
 
 span {
-  font-family: Montserrat, serif;
+  font-family: Orbitron, serif;
 }
 
 p {
-  font-family: Montserrat, serif;
+  font-family: Orbitron, serif;
 }
 
 small {
-  font-family: Montserrat, serif;
+  font-family: Orbitron, serif;
 }
 
 button {
@@ -100,7 +99,7 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
+  font-family: Aquire, serif !important;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;

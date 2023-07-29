@@ -1,16 +1,27 @@
 <script setup>
+import router from "../router/routes.js";
+
+const goTo = (page) => {
+    router.push(page);
+}
 </script>
 
 <template>
     <div>
         <div class="section1-area">
-            <h1>Hi, I'm Eugene</h1>
-            <h2 class="accentFont">
-                a <span class="accentFont">Full-stack Web Developer</span>
-            </h2>
-            <h4 class="introduction-text">
-                Crafting digital experiences is my passion. With 2+ years in web and mobile development, I don't just build websites—I amplify your brand. Let's ensure your business doesn't just grow, but thrives.
-            </h4>
+            <div>
+                <h1>Hi, I'm Eugene</h1>
+                <h2 class="accentFont">
+                    a <span class="accentFont">Full-stack Web Developer</span>
+                </h2>
+                <h4 class="introduction-text">
+                    Crafting digital experiences is my passion. With 2+ years in web and mobile development, I don't just build websites—I amplify your brand. Let's ensure your business doesn't just grow, but thrives.
+                </h4>
+            </div>
+            <div class="introduction-button-area">
+                <a class="btn btn-primary btn-lg" @click="goTo('/about')">About Me</a>
+                <a class="btn btn-primary btn-lg" @click="goTo('/projects')">My Works</a>
+            </div>
         </div>
     </div>
 </template>
@@ -21,6 +32,8 @@
     padding: 5rem;
     color: var(--textColor);
     overflow: hidden;
+    display: grid;
+    place-items: center;
 
     @media (max-width: 600px) {
         padding: 1rem;
@@ -141,5 +154,35 @@ h1::after {
     font-size: 2em;
     animation: rightIn 1s ease-in forwards var(--delay);
     opacity: 0;
+}
+
+.introduction-button-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin-bottom: 5rem;
+    width: 100%;
+    gap: 4rem;
+
+    border-top: 0.2rem solid var(--textColor);
+    border-bottom: 0.2rem solid var(--textColor);
+}
+
+.btn {
+    color: var(--textColor);
+
+    &:hover {
+        animation: radiate 0.2s forwards;
+    }
+}
+
+@keyframes radiate {
+    0% {
+        box-shadow: 0 0 0 0 #fafafa;
+    }
+    100% {
+        box-shadow: 8px 8px 0 0 #fafafa;
+    }
 }
 </style>

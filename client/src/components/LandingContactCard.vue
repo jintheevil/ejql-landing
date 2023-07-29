@@ -4,11 +4,11 @@
 
 <template>
     <div class="section2-area">
-        <div class="card-border">
+        <div class="card-border slide-in-left">
             <div class="card-body"></div>
         </div>
         <div>
-            <div class="introduction-contact">
+            <div class="introduction-contact slide-in-right">
                 <h2>Software Developer / Engineer</h2>
                 <h4>
                     As a self-taught software developer/engineer with over 2 years of experience, I am driven by curiosity and a passion for coding. Working with diverse clients, I've honed my skills across various tech stacks, always seeking to expand my knowledge.
@@ -98,4 +98,35 @@
     grid-template-columns: 0.2fr 0.7fr;
   }
 }
+
+.slide-in-left {
+    animation: slide-in-left 0.3s 0.2s both cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-110%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-right {
+    animation: slide-in-right 0.3s 0.5s both cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(110%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 </style>

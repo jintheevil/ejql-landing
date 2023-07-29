@@ -49,7 +49,7 @@ const navItems = [
       </div>
       <div class="nav-bar">
           <div v-for="navItem in navItems" class="nav-item">
-              <router-link class="nav-link" :class="currentRouter === navItem.name ? 'active' : ' '"  :to=" navItem.route ">{{ navItem.name }}</router-link>
+              <router-link class="nav-link" :class="currentRouter === navItem.name ? 'active' : ' '"  :to=" navItem.route ">{{ navItem.label }}</router-link>
           </div>
       </div>
       <Menu></Menu>

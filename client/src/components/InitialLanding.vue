@@ -1,6 +1,6 @@
 <script setup>
 import {useSettingsStore} from "../store/SettingsModel.js";
-import {defineEmits, ref, computed, watch, onMounted} from "vue";
+import {ref, computed, onMounted} from "vue";
 
 const settings = computed(() => useSettingsStore().getMode);
 const visited = computed(() => useSettingsStore().getVisited);
