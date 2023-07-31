@@ -1,5 +1,6 @@
 <script setup>
 import router from "../router/routes.js";
+import TypingEffect from "./util/TypingEffect.vue";
 
 const goTo = (page) => {
     router.push(page);
@@ -10,7 +11,7 @@ const goTo = (page) => {
     <div>
         <div class="section1-area">
             <div>
-                <h1>Hi, I'm Eugene</h1>
+                <TypingEffect></TypingEffect>
                 <h2 class="accentFont">
                     a <span class="accentFont">Full-stack Web Developer</span>
                 </h2>
