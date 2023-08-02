@@ -1,7 +1,7 @@
 <script setup>
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
-import InitialLanding from "./components/InitialLanding.vue";
+import InitialLanding from "./components/util/InitialLanding.vue";
 </script>
 
 <template>

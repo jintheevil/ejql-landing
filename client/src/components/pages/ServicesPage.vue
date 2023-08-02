@@ -80,32 +80,32 @@ const services = [
   {
     name: 'Full-Stack Solutions',
     description: 'From frontend to backend, you get the whole package done.',
-    icon: '../assets/services-icons/programming.png',
+    icon: '../../assets/services-icons/programming.png',
   },
   {
     name: 'UI Design',
     description: 'Providing you with elegant and modern UI designs for your website.',
-    icon: '../assets/services-icons/ui-design.png',
+    icon: '../../assets/services-icons/ui-design.png',
   },
   {
     name: 'UX Optimization',
     description: 'User experience is the key to success and optimization is the name of the game.',
-    icon: '../assets/services-icons/ux-design.png',
+    icon: '../../assets/services-icons/ux-design.png',
   },
   {
     name: 'Responsive',
     description: 'Mobile or desktop, I got you covered.',
-    icon: '../assets/services-icons/ux.png',
+    icon: '../../assets/services-icons/ux.png',
   },
   {
     name: 'Database Management',
     description: 'Ensuring that your user data is safe and secure at all times.',
-    icon: '../assets/services-icons/database.png',
+    icon: '../../assets/services-icons/database.png',
   },
   {
     name: 'Satisfaction Guaranteed',
     description: 'A 100% satisfaction guarantee.',
-    icon: '../assets/services-icons/smile.png',
+    icon: '../../assets/services-icons/smile.png',
   }
 ]
 
@@ -160,7 +160,6 @@ const useImage = (url) => {
     scroll-snap-type: y mandatory;
     cursor: grab;
     will-change: scroll-position;
-    scroll-behavior: smooth;
 
     &.active {
         cursor: grabbing;

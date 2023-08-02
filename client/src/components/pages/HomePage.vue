@@ -1,30 +1,41 @@
 <script setup>
-import router from "../router/routes.js";
-import TypingEffect from "./util/TypingEffect.vue";
+import router from "../../router/routes.js";
+import TypingEffect from "../util/TypingEffect.vue";
+import {onMounted} from "vue";
+import {useSettingsStore} from "../../store/SettingsModel.js";
+import BurgerStack from "../util/BurgerStack.vue";
 
 const goTo = (page) => {
     router.push(page);
 }
+
+onMounted(() => {
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+});
 </script>
 
 <template>
     <div>
         <div class="section1-area">
             <div>
-                <TypingEffect></TypingEffect>
-                <h2 class="accentFont">
+                <TypingEffect :class="useSettingsStore().getVisited ? '' : 'slide-in-bottom-1'"></TypingEffect>
+                <h2 class="accentFont" :class="useSettingsStore().getVisited ? '' : 'slide-in-bottom-2'">
                     a <span class="accentFont">Full-stack Web Developer</span>
                 </h2>
-                <h4 class="introduction-text">
+                <h4 class="introduction-text" :class="useSettingsStore().getVisited ? '' : 'slide-in-bottom-3'">
                     Crafting digital experiences is my passion. With 2+ years in web and mobile development, I don't just build websites—I amplify your brand. Let's ensure your business doesn't just grow, but thrives.
                 </h4>
             </div>
-            <div class="introduction-button-area">
+            <div class="introduction-button-area" :class="useSettingsStore().getVisited ? '' : 'slide-in-bottom-4'">
                 <a class="btn btn-primary btn-lg" @click="goTo('/about')">About Me</a>
                 <a class="btn btn-primary btn-lg" @click="goTo('/projects')">My Works</a>
             </div>
         </div>
     </div>
+    <BurgerStack></BurgerStack>
 </template>
 
 <style lang="scss" scoped>
@@ -184,6 +195,33 @@ h1::after {
     }
     100% {
         box-shadow: 8px 8px 0 0 #fafafa;
+    }
+}
+
+.slide-in-bottom-1 {
+    animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 5.25s both;
+}
+
+.slide-in-bottom-2 {
+    animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 5.5s both;
+}
+
+.slide-in-bottom-3 {
+    animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 5.75s both;
+}
+
+.slide-in-bottom-4 {
+    animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 6s both;
+}
+
+@keyframes slide-in-bottom {
+    0% {
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 </style>

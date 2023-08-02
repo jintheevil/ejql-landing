@@ -1,5 +1,5 @@
 <script setup>
-import LandingIntroduction from "../components/LandingIntroduction.vue";
+import LandingIntroduction from "../components/pages/HomePage.vue";
 import {useSettingsStore} from "../store/SettingsModel.js";
 </script>
 

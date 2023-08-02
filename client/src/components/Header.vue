@@ -2,6 +2,7 @@
 import { computed } from "vue";
 import { useRouter } from "vue-router";
 import Menu from "./util/Menu.vue";
+import {useSettingsStore} from "../store/SettingsModel.js";
 
 const currentRouter = computed(() => {
   return useRouter().currentRoute.value.name;
@@ -45,14 +46,14 @@ const navItems = [
   <div class="empty"></div>
   <div class="container-fluid main-header">
       <div class="navbar-brand">
-          <h4 class="hello-logo">WELCOME!</h4>
+          <h4 class="hello-logo slide-in-right" >WELCOME!</h4>
       </div>
-      <div class="nav-bar">
+      <div class="nav-bar slide-in-bottom">
           <div v-for="navItem in navItems" class="nav-item">
               <router-link class="nav-link" :class="currentRouter === navItem.name ? 'active' : ' '"  :to=" navItem.route ">{{ navItem.label }}</router-link>
           </div>
       </div>
-      <Menu></Menu>
+      <Menu class="slide-in-left"></Menu>
   </div>
 </template>
 
@@ -170,4 +171,49 @@ const navItems = [
     }
 }
 
+.slide-in-left {
+    animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 4.25s both;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+.slide-in-right {
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 4.25s both;
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-bottom {
+    animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 4.75s both;
+}
+
+@keyframes slide-in-bottom {
+    0% {
+        transform: translateY(5rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 </style>

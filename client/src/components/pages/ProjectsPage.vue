@@ -26,11 +26,11 @@ const flickRight = () => {
             <Flicking ref="flicking" class="flick-container" :options="{ circular: false, align: 'center', gap: '2rem', panelsPerView: 1 }">
                 <a class="flick-panel" href="https://www.hugemaxsolutions.com.my" target="_blank">
                     <h4 class="flick-title">Hugemax Solutions Sdn. Bhd.</h4>
-                    <img class="panel" alt="#" src="../assets/projects/hugemax-website.png"/>
+                    <img class="panel" alt="#" src="../../assets/projects/hugemax-website.png"/>
                 </a>
                 <a class="flick-panel" href="https://www.hugemaxsolutions.com.my" target="_blank">
                     <h4 class="flick-title">Hugemax Solutions Sdn. Bhd.</h4>
-                    <img class="panel" alt="#" src="../assets/projects/hugemax-website.png"/>
+                    <img class="panel" alt="#" src="../../assets/projects/hugemax-website.png"/>
                 </a>
             </Flicking>
         </div>

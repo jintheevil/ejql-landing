@@ -1,5 +1,5 @@
 <script setup>
-import {useSettingsStore} from "../store/SettingsModel.js";
+import {useSettingsStore} from "../../store/SettingsModel.js";
 import {ref, computed, onMounted} from "vue";
 
 const settings = computed(() => useSettingsStore().getMode);
@@ -39,7 +39,7 @@ onMounted(() => {
 
     setTimeout(() => {
         useSettingsStore().setVisited()
-    }, 4000);
+    }, 7000);
 })
 </script>
 
@@ -60,10 +60,11 @@ onMounted(() => {
     top: 0;
     background: var(--backgroundColor);
     color: var(--textColor);
-    z-index: 3;
+    z-index: 9;
     margin-left: -10rem;
     display: grid;
     place-items: center;
+    animation: fade-out 0.5s 4s ease-out forwards;
 
     @media (max-width: 1181px) {
         margin-left: 0;
@@ -101,6 +102,15 @@ onMounted(() => {
     100% {
         letter-spacing: 1em;
         transform: translateZ(100vw);
+        opacity: 0;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
         opacity: 0;
     }
 }

@@ -6,7 +6,7 @@ let displayText = ref("");
 
 const texts = [
     "HI, I'M EUGENE.",
-    "WELCOME TO MY PAGE."
+    "WELCOME."
 ];
 
 let textIndex = ref(0);

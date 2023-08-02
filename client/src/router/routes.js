@@ -8,10 +8,10 @@ import CreateBlog from "../pages/CreateBlog.vue";
 import BlogList from "../pages/BlogList.vue";
 import IndividualBlog from "../pages/IndividualBlog.vue";
 
-import LandingContactCard from "../components/LandingContactCard.vue";
-import LandingServices from "../components/LandingServices.vue";
-import LandingFlicker from "../components/LandingFlicker.vue";
-import LandingIntroduction from "../components/LandingIntroduction.vue";
+import LandingContactCard from "../components/pages/AboutPage.vue";
+import LandingServices from "../components/pages/ServicesPage.vue";
+import LandingFlicker from "../components/pages/ProjectsPage.vue";
+import LandingIntroduction from "../components/pages/HomePage.vue";
 import {useSettingsStore} from "../store/SettingsModel.js";
 
 // Routes
