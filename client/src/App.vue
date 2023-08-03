@@ -5,12 +5,14 @@ import InitialLanding from "./components/util/InitialLanding.vue";
 </script>
 
 <template>
-  <Header></Header>
-  <InitialLanding></InitialLanding>
-  <transition name="fade" mode="out-in">
-      <router-view :key="$route.fullPath"></router-view>
-  </transition>
-  <Footer></Footer>
+    <Header></Header>
+    <InitialLanding></InitialLanding>
+    <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+            <component :is="Component" :key="$route.fullPath" />
+        </transition>
+    </router-view>
+    <Footer></Footer>
 </template>
 
 <style scoped>

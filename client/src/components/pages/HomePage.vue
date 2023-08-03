@@ -19,23 +19,25 @@ onMounted(() => {
 
 <template>
     <div>
-        <div class="section1-area">
-            <div>
-                <TypingEffect :class="useSettingsStore().getVisited ? '' : 'slide-in-bottom-1'"></TypingEffect>
-                <h2 class="accentFont" :class="useSettingsStore().getVisited ? '' : 'slide-in-bottom-2'">
-                    a <span class="accentFont">Full-stack Web Developer</span>
-                </h2>
-                <h4 class="introduction-text" :class="useSettingsStore().getVisited ? '' : 'slide-in-bottom-3'">
-                    Crafting digital experiences is my passion. With 2+ years in web and mobile development, I don't just build websites—I amplify your brand. Let's ensure your business doesn't just grow, but thrives.
-                </h4>
-            </div>
-            <div class="introduction-button-area" :class="useSettingsStore().getVisited ? '' : 'slide-in-bottom-4'">
-                <a class="btn btn-primary btn-lg" @click="goTo('/about')">About Me</a>
-                <a class="btn btn-primary btn-lg" @click="goTo('/projects')">My Works</a>
+        <div>
+            <div class="section1-area">
+                <div>
+                    <TypingEffect :class="useSettingsStore().getVisited ? '' : 'slide-in-bottom-1'"></TypingEffect>
+                    <h2 class="accentFont" :class="useSettingsStore().getVisited ? '' : 'slide-in-bottom-2'">
+                        a <span class="accentFont">Full-stack Web Developer</span>
+                    </h2>
+                    <h4 class="introduction-text" :class="useSettingsStore().getVisited ? '' : 'slide-in-bottom-3'">
+                        Crafting digital experiences is my passion. With 2+ years in web and mobile development, I don't just build websites—I amplify your brand. Let's ensure your business doesn't just grow, but thrives.
+                    </h4>
+                </div>
+                <div class="introduction-button-area" :class="useSettingsStore().getVisited ? '' : 'slide-in-bottom-4'">
+                    <a class="btn btn-primary btn-lg" @click="goTo('/about')">About Me</a>
+                    <a class="btn btn-primary btn-lg" @click="goTo('/projects')">My Works</a>
+                </div>
             </div>
         </div>
+        <BurgerStack></BurgerStack>
     </div>
-    <BurgerStack></BurgerStack>
 </template>
 
 <style lang="scss" scoped>

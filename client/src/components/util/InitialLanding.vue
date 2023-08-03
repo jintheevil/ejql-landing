@@ -65,6 +65,7 @@ onMounted(() => {
     display: grid;
     place-items: center;
     animation: fade-out 0.5s 4s ease-out forwards;
+    overflow: hidden;
 
     @media (max-width: 1181px) {
         margin-left: 0;

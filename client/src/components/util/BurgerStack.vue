@@ -1,8 +1,123 @@
 <script setup>
+const frontend = [
+    {
+        name: 'HTML',
+        img: '../../assets/stack/front/html5.png'
+    },
+    {
+        name: 'CSS',
+        img: '../../assets/stack/front/css3.svg'
+    },
+    {
+        name: 'Bootstrap',
+        img: '../../assets/stack/front/bootstrap5.svg'
+    },
+    {
+        name: 'SASS',
+        img: '../../assets/stack/front/sass.svg'
+    },
+    {
+        name: 'TailwindCss',
+        img: '../../assets/stack/front/tailwind.png'
+    },
+    {
+        name: 'Ionic',
+        img: '../../assets/stack/front/ionic.png'
+    },
+    {
+        name: 'ReactJs',
+        img: '../../assets/stack/front/reactjs.svg'
+    },
+    {
+        name: 'VueJs',
+        img: '../../assets/stack/front/vuejs.png'
+    }
+]
+
+const backend = [
+    {
+        name: 'MySQL',
+        img: '../../assets/stack/back/mysql.png'
+    },
+    {
+        name: 'NodeJs',
+        img: '../../assets/stack/back/nodejs.svg'
+    },
+    {
+        name: 'Laravel',
+        img: '../../assets/stack/back/laravel.png'
+    },
+    {
+        name: 'MongoDB',
+        img: '../../assets/stack/back/mongodb.png'
+    },
+    {
+        name: 'PostgreSQL',
+        img: '../../assets/stack/back/postfresql.png'
+    },
+    {
+        name: 'Postman',
+        img: '../../assets/stack/back/postman.png'
+    }
+]
+
+const languages = [
+    {
+        name: 'JavaScript',
+        img: '../../assets/stack/languages/js.svg'
+    },
+    {
+        name: 'TypeScript',
+        img: '../../assets/stack/languages/typescript.png'
+    },
+    {
+        name: 'PHP',
+        img: '../../assets/stack/languages/php.png'
+    },
+    {
+        name: 'Python',
+        img: '../../assets/stack/languages/python.png'
+    }
+]
+
+const devops = [
+    {
+        name: 'AWS',
+        img: '../../assets/stack/dev/aws.png'
+    },
+    {
+        name: 'AWS-EC2',
+        img: '../../assets/stack/dev/aws-ec2.png'
+    },
+    {
+        name: 'Firebase',
+        img: '../../assets/stack/dev/firebase.png'
+    },
+    {
+        name: 'Git',
+        img: '../../assets/stack/dev/git.png'
+    },
+    {
+        name: 'GitHub',
+        img: '../../assets/stack/dev/github.png'
+    },
+    {
+        name: 'GitLab',
+        img: '../../assets/stack/dev/gitlab.svg'
+    },
+    {
+        name: 'WordPress',
+        img: '../../assets/stack/dev/wordpress.png'
+    }
+]
+
+const useImage = (url) => {
+    return new URL(url, import.meta.url).href
+}
 </script>
 
 <template>
-  <div>
+  <div class="page-container">
       <h1 class="burger-header">THE STACK</h1>
       <div class="burger-container">
           <div class="top-bun">
@@ -23,27 +138,55 @@
                   <circle cx="80.5" cy="50.5" r="2.5" fill="#FAFAFA"/>
                   <circle cx="37.5" cy="48.5" r="2.5" fill="#FAFAFA"/>
               </svg>
+              <div class="connector-line"></div>
+              <div class="tech-stack-card">
+                  <h2>FRONTEND</h2>
+                  <img v-for="tech in frontend" :alt="tech.name" class="tech-icon" :src="useImage(tech.img)"/>
+                  <!-- Stack details here -->
+              </div>
           </div>
           <div class="lettuce">
               <svg xmlns="http://www.w3.org/2000/svg" width="352" height="93" viewBox="0 0 352 93" fill="none">
                   <path d="M83.164 91.6119C63.9501 92.7074 63.1802 63.8345 63.1802 63.8345C63.1802 63.8345 -1.26384 55.3825 0.852595 46.4002C2.96903 37.418 61.0862 27.1083 61.0862 27.1083C61.0862 27.1083 59.3114 11.3519 78.3928 7.93194C97.4741 4.51198 140.349 18.8578 140.349 18.8578C140.349 18.8578 171.815 2.13886 195.422 1.25926C219.029 0.379649 246.237 16.5515 246.237 16.5515C246.237 16.5515 273.31 -0.383268 291.015 2.8048C308.721 5.99288 304.674 27.2116 304.674 27.2116C304.674 27.2116 351.757 38.5191 351.387 47.4018C351.017 56.2844 294.249 59.5212 294.249 59.5212C294.249 59.5212 307.616 78.8142 284.035 80.1587C260.455 81.5032 235.735 62.8575 235.735 62.8575C235.735 62.8575 205.752 90.2191 184.818 91.8791C163.884 93.539 148.399 67.8371 148.399 67.8371C148.399 67.8371 102.378 90.5163 83.164 91.6119Z" stroke="#FAFAFA"/>
               </svg>
+              <div class="connector-line"></div>
+              <div class="tech-stack-card">
+                  <h2>BACKEND</h2>
+                  <img v-for="tech in backend" :alt="tech.name" class="tech-icon" :src="useImage(tech.img)"/>
+                  <!-- Stack details here -->
+              </div>
           </div>
           <div class="patty">
               <svg xmlns="http://www.w3.org/2000/svg" width="287" height="97" viewBox="0 0 287 97" fill="none">
                   <path d="M273 78C251.315 103.804 46.3694 101.192 19.0002 78C-8.36909 54.8077 -1.2271 39.3411 23.6061 18C48.4392 -3.34113 241 -5 263.606 13C286.212 31 294.685 52.196 273 78Z"/>
               </svg>
+              <div class="connector-line top-bun-connector"></div>
+              <div class="tech-stack-card">
+                  <h2>LANGUAGES</h2>
+                  <img v-for="tech in languages" :alt="tech.name" class="tech-icon" :src="useImage(tech.img)"/>
+                  <!-- Stack details here -->
+              </div>
           </div>
           <div class="btm-bun">
               <svg xmlns="http://www.w3.org/2000/svg" width="280" height="64" viewBox="0 0 280 64" fill="none">
                   <path d="M271.426 2H13.1352C13.1352 2 -49.5294 62 136.778 62C323.085 62 271.426 2 271.426 2Z"/>
               </svg>
+              <div class="connector-line"></div>
+              <div class="tech-stack-card">
+                  <h2>DEVOPS</h2>
+                  <img v-for="tech in devops" :alt="tech.name" class="tech-icon" :src="useImage(tech.img)"/>
+                  <!-- Stack details here -->
+              </div>
           </div>
       </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.page-container {
+    height: 100vh;
+}
+
 .burger-header {
   color: var(--textColor);
   text-align: center;
@@ -64,6 +207,7 @@
   z-index: 4;
   margin: 0;
   transition: margin 0.5s ease;
+    position: relative;
 
   svg {
     stroke-width: 0.25rem;
@@ -77,6 +221,18 @@
       stroke: #fafafa;
       fill: #daa520;
     }
+    .connector-line {
+        opacity: 1;
+        visibility: visible;
+        top: -40px;
+        left: calc(50% + 60px);
+    }
+    .tech-stack-card {
+        opacity: 1;
+        visibility: visible;
+        top: -224px;
+        left: 48px;
+    }
     margin: 4rem 0;
     transition: margin 0.5s ease;
   }
@@ -87,6 +243,7 @@
   margin-top: -1.8rem;
   margin-bottom: 0;
   transition: margin-bottom 0.5s ease, margin-top 0.5s ease;
+    position: relative;
 
   svg {
     stroke-width: 0.25rem;
@@ -100,7 +257,19 @@
       stroke: #fafafa;
       fill: #32cd32;
     }
-
+    .connector-line {
+        opacity: 1;
+        visibility: visible;
+        rotate: 90deg;
+        top: 48px;
+        right: -52px;
+    }
+    .tech-stack-card {
+        opacity: 1;
+        visibility: visible;
+        top: 8px;
+        right: -350px;
+    }
     margin: 4rem 0;
     padding-bottom: 4rem;
     transition: margin 0.5s ease;
@@ -112,6 +281,7 @@
   margin-top: -4rem;
   padding: 0;
   transition: padding 0.5s ease;
+    position: relative;
 
   svg {
     stroke-width: 0.25rem;
@@ -125,6 +295,19 @@
       stroke: #fafafa;
       fill: #8B4513;
     }
+    .connector-line {
+        opacity: 1;
+        visibility: visible;
+        rotate: 90deg;
+        top: 112px;
+        left: 0;
+    }
+    .tech-stack-card {
+        opacity: 1;
+        visibility: visible;
+        top: 64px;
+        left: -350px;
+    }
     padding: 4rem 0;
     margin-top: 0;
     margin-bottom: 2rem;
@@ -137,6 +320,7 @@
   margin-top: -1.8rem;
   margin-bottom: 0;
   transition: margin-bottom 0.5s ease, margin-top 0.5s ease;
+    position: relative;
 
   svg {
     stroke-width: 0.25rem;
@@ -150,8 +334,61 @@
       stroke: #fafafa;
       fill: #daa520;
     }
+    .connector-line {
+        opacity: 1;
+        visibility: visible;
+        top: 56px;
+        left: 48px;
+    }
+    .tech-stack-card {
+        opacity: 1;
+        visibility: visible;
+        top: 106px;
+        right: 32px;
+    }
     margin-top: 4rem;
+    padding-bottom: 2rem;
     transition: margin-top 0.5s ease;
   }
+}
+
+.connector-line {
+    width: 2px;
+    height: 50px;
+    background-color: #fafafa;
+    transform-origin: top left;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out;
+}
+
+.tech-stack-card {
+    width: 300px;
+    border: 1px solid #fafafa;
+    border-radius: 8px;
+    padding: 20px;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    color: #fafafa;
+    background: #213547;
+    transition: opacity 0.5s ease-out;
+
+    .tech-stack-items {
+        display: flex;
+        gap: 2rem;
+
+        .test-item {
+            height: 32px;
+            width: 32px;
+            background-color: #fafafa;
+        }
+    }
+}
+
+.tech-icon {
+    height: 3rem;
+    width: 3rem;
 }
 </style>
