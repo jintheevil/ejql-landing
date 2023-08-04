@@ -1,18 +1,18 @@
 import {createRouter, createWebHistory} from "vue-router";
 
 // Import routed pages
-import Home from "../pages/Home.vue";
-import About from "../pages/About.vue";
-import Blog from "../pages/Blog.vue";
-import CreateBlog from "../pages/CreateBlog.vue";
-import BlogList from "../pages/BlogList.vue";
-import IndividualBlog from "../pages/IndividualBlog.vue";
+// const Home = () => import("../pages/Home.vue");
+// const About = () => import("../pages/About.vue");
+const Blog = () => import("../pages/Blog.vue");
+const CreateBlog = () => import("../pages/CreateBlog.vue");
+const BlogList = () => import("../pages/BlogList.vue");
+const IndividualBlog = () => import("../pages/IndividualBlog.vue");
 
-import LandingContactCard from "../components/pages/AboutPage.vue";
-import LandingServices from "../components/pages/ServicesPage.vue";
-import LandingFlicker from "../components/pages/ProjectsPage.vue";
-import LandingIntroduction from "../components/pages/HomePage.vue";
-import {useSettingsStore} from "../store/SettingsModel.js";
+
+const LandingContactCard = () => import("../components/pages/AboutPage.vue");
+const LandingServices = () => import("../components/pages/ServicesPage.vue");
+const LandingFlicker = () => import("../components/pages/ProjectsPage.vue");
+const LandingIntroduction = () => import("../components/pages/HomePage.vue");
 
 // Routes
 const routes = [

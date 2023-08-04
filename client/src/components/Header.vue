@@ -43,7 +43,6 @@ const navItems = [
 </script>
 
 <template>
-  <div class="empty"></div>
   <div class="container-fluid main-header">
       <div class="navbar-brand">
           <h4 class="hello-logo slide-in-right" >WELCOME!</h4>
@@ -58,9 +57,6 @@ const navItems = [
 </template>
 
 <style scoped>
-.empty {
-    display: none;
-}
 .hello-logo {
     font-weight: 800;
     font-size: 1.5rem;
@@ -77,7 +73,7 @@ const navItems = [
     position: sticky;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 9;
     background: var(--backgroundColor);
 
     @media (max-width: 1181px) {
@@ -89,9 +85,6 @@ const navItems = [
         //background: var(--backgroundColor);
     }
 }
-.btn {
-    background: none;
-}
 .nav-bar {
     display: flex;
     gap: 2rem;
@@ -101,7 +94,8 @@ const navItems = [
     }
 }
 .nav-link{
-    color: var(--headerColor);
+    color: var(--accentColor);
+    opacity: 0.5;
     padding: 1rem;
     border-radius: 0.5rem;
     transition: transform 0.25s ease-in-out;
@@ -111,6 +105,7 @@ const navItems = [
     color: var(--accentColor);
     transform: translateY(-0.5rem);
     transition: all 0.125s ease-in;
+    opacity: 1;
 
     @media (max-width: 1181px) {
         transform: none;
@@ -118,6 +113,7 @@ const navItems = [
 }
 .active {
     color: var(--accentColor);
+    opacity: 1;
 }
 .dropdown {
     position: relative;

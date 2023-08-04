@@ -4,7 +4,7 @@ import '../src/scss/styles.scss'
 import App from './App.vue'
 
 // Import Particles
-import Particles from 'vue3-particles';
+// import Particles from 'vue3-particles';
 
 // Import Pinia
 import { createPinia } from 'pinia';
@@ -12,7 +12,7 @@ import { createPinia } from 'pinia';
 const pinia = createPinia();
 
 // Import Quill
-import { QuillEditor } from '@vueup/vue-quill'
+// import { QuillEditor } from '@vueup/vue-quill'
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
 
 // Material Icons
@@ -27,18 +27,18 @@ import Menu from "vue-material-design-icons/Menu.vue"
 import * as bootstrap from 'bootstrap'
 
 // Import Axios to access APIs
-import axios from 'axios'
-import VueAxios from 'vue-axios'
+// import axios from 'axios'
+// import VueAxios from 'vue-axios'
 
 // Import Router
 import router from './router/routes.js'
 
 createApp(App)
     .use(router)
-    .use(VueAxios, axios)
+    // .use(VueAxios, axios)
     .use(pinia)
-    .use(Particles)
-    .component('QuillEditor', QuillEditor)
+    // .use(Particles)
+    // .component('QuillEditor', QuillEditor)
     .component('facebook-icon', Facebook)
     .component('whatsapp-icon', Whatsapp)
     .component('linkedin-icon', Linkedin)

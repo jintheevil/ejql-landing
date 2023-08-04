@@ -2,7 +2,7 @@
 const frontend = [
     {
         name: 'HTML',
-        img: '../../assets/stack/front/html5.png'
+        img: '../../assets/stack/front/html5.svg'
     },
     {
         name: 'CSS',
@@ -18,11 +18,11 @@ const frontend = [
     },
     {
         name: 'TailwindCss',
-        img: '../../assets/stack/front/tailwind.png'
+        img: '../../assets/stack/front/tailwind.svg'
     },
     {
         name: 'Ionic',
-        img: '../../assets/stack/front/ionic.png'
+        img: '../../assets/stack/front/ionic.svg'
     },
     {
         name: 'ReactJs',
@@ -30,14 +30,14 @@ const frontend = [
     },
     {
         name: 'VueJs',
-        img: '../../assets/stack/front/vuejs.png'
+        img: '../../assets/stack/front/vuejs.svg'
     }
 ]
 
 const backend = [
     {
         name: 'MySQL',
-        img: '../../assets/stack/back/mysql.png'
+        img: '../../assets/stack/back/mysql.svg'
     },
     {
         name: 'NodeJs',
@@ -45,19 +45,19 @@ const backend = [
     },
     {
         name: 'Laravel',
-        img: '../../assets/stack/back/laravel.png'
+        img: '../../assets/stack/back/laravel.svg'
     },
     {
         name: 'MongoDB',
-        img: '../../assets/stack/back/mongodb.png'
+        img: '../../assets/stack/back/mongodb.svg'
     },
     {
         name: 'PostgreSQL',
-        img: '../../assets/stack/back/postfresql.png'
+        img: '../../assets/stack/back/postfresql.svg'
     },
     {
         name: 'Postman',
-        img: '../../assets/stack/back/postman.png'
+        img: '../../assets/stack/back/postman.svg'
     }
 ]
 
@@ -68,38 +68,38 @@ const languages = [
     },
     {
         name: 'TypeScript',
-        img: '../../assets/stack/languages/typescript.png'
+        img: '../../assets/stack/languages/typescript.svg'
     },
     {
         name: 'PHP',
-        img: '../../assets/stack/languages/php.png'
+        img: '../../assets/stack/languages/php.svg'
     },
     {
         name: 'Python',
-        img: '../../assets/stack/languages/python.png'
+        img: '../../assets/stack/languages/python.svg'
     }
 ]
 
 const devops = [
     {
         name: 'AWS',
-        img: '../../assets/stack/dev/aws.png'
+        img: '../../assets/stack/dev/aws.svg'
     },
     {
         name: 'AWS-EC2',
-        img: '../../assets/stack/dev/aws-ec2.png'
+        img: '../../assets/stack/dev/aws-ec2.svg'
     },
     {
         name: 'Firebase',
-        img: '../../assets/stack/dev/firebase.png'
+        img: '../../assets/stack/dev/firebase.svg'
     },
     {
         name: 'Git',
-        img: '../../assets/stack/dev/git.png'
+        img: '../../assets/stack/dev/git.svg'
     },
     {
         name: 'GitHub',
-        img: '../../assets/stack/dev/github.png'
+        img: '../../assets/stack/dev/github.svg'
     },
     {
         name: 'GitLab',
@@ -107,7 +107,7 @@ const devops = [
     },
     {
         name: 'WordPress',
-        img: '../../assets/stack/dev/wordpress.png'
+        img: '../../assets/stack/dev/wordpress.svg'
     }
 ]
 
@@ -122,7 +122,7 @@ const useImage = (url) => {
       <div class="burger-container">
           <div class="top-bun">
               <svg xmlns="http://www.w3.org/2000/svg" width="279" height="74" viewBox="0 0 279 74" fill="none">
-                  <path d="M277 72H2C2 72 1.99999 2 133.641 2C277 2 277 72 277 72Z" stroke="#FAFAFA" stroke-width="4"/>
+                  <path d="M277 72H2C2 72 1.99999 2 133.641 2C277 2 277 72 277 72Z" stroke-width="4"/>
                   <circle cx="59.5" cy="34.5" r="2.5" fill="#FAFAFA"/>
                   <circle cx="93.5" cy="29.5" r="2.5" fill="#FAFAFA"/>
                   <circle cx="117.5" cy="16.5" r="2.5" fill="#FAFAFA"/>
@@ -141,7 +141,7 @@ const useImage = (url) => {
               <div class="connector-line"></div>
               <div class="tech-stack-card">
                   <h2>FRONTEND</h2>
-                  <img v-for="tech in frontend" :alt="tech.name" class="tech-icon" :src="useImage(tech.img)"/>
+                  <img v-for="tech in frontend" :alt="tech.name" height="96" width="96" class="tech-icon" :src="useImage(tech.img)"/>
                   <!-- Stack details here -->
               </div>
           </div>
@@ -152,7 +152,7 @@ const useImage = (url) => {
               <div class="connector-line"></div>
               <div class="tech-stack-card">
                   <h2>BACKEND</h2>
-                  <img v-for="tech in backend" :alt="tech.name" class="tech-icon" :src="useImage(tech.img)"/>
+                  <img v-for="tech in backend" :alt="tech.name" height="96" width="96" class="tech-icon" :src="useImage(tech.img)"/>
                   <!-- Stack details here -->
               </div>
           </div>
@@ -163,7 +163,7 @@ const useImage = (url) => {
               <div class="connector-line top-bun-connector"></div>
               <div class="tech-stack-card">
                   <h2>LANGUAGES</h2>
-                  <img v-for="tech in languages" :alt="tech.name" class="tech-icon" :src="useImage(tech.img)"/>
+                  <img v-for="tech in languages" :alt="tech.name" height="96" width="96" class="tech-icon" :src="useImage(tech.img)"/>
                   <!-- Stack details here -->
               </div>
           </div>
@@ -174,7 +174,7 @@ const useImage = (url) => {
               <div class="connector-line"></div>
               <div class="tech-stack-card">
                   <h2>DEVOPS</h2>
-                  <img v-for="tech in devops" :alt="tech.name" class="tech-icon" :src="useImage(tech.img)"/>
+                  <img v-for="tech in devops" :alt="tech.name" height="96" width="96" class="tech-icon" :src="useImage(tech.img)"/>
                   <!-- Stack details here -->
               </div>
           </div>

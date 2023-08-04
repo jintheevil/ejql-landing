@@ -48,11 +48,12 @@ onMounted(() => {
     overflow: hidden;
     display: grid;
     place-items: center;
+    position: relative;
 
     @media (max-width: 600px) {
         padding: 1rem;
         height: calc(100vh);
-        width: auto;
+        width: 100%;
     }
     h1 {
         font-size: 3rem;
@@ -73,15 +74,6 @@ onMounted(() => {
 }
 .accentFont {
     color: var(--accentColor);
-
-    @media (max-width: 600px) {
-        //font-size: 1.5rem !important;
-        //line-height: 2.25rem;
-    }
-}
-.introduction-text {
-    @media (max-width: 600px) {
-    }
 }
 @keyframes blink {
     0%, 50% {
@@ -193,10 +185,10 @@ h1::after {
 
 @keyframes radiate {
     0% {
-        box-shadow: 0 0 0 0 #fafafa;
+        box-shadow: 0 0 0 0 var(--textColor);
     }
     100% {
-        box-shadow: 8px 8px 0 0 #fafafa;
+        box-shadow: 8px 8px 0 0 var(--textColor);
     }
 }
 

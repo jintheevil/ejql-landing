@@ -2,7 +2,6 @@
 import {useSettingsStore} from "../../store/SettingsModel.js";
 import {ref, computed, onMounted} from "vue";
 
-const settings = computed(() => useSettingsStore().getMode);
 const visited = computed(() => useSettingsStore().getVisited);
 
 let letters = ref(['E', 'L', 'J', 'Q'])
@@ -44,7 +43,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div v-if="!visited"  class="initialVisit">
+    <div  class="initialVisit">
         <div class="animation-text">
             <h1 v-for="(letter, index) in letters" :key="index" class="letters">{{letter}}</h1>
         </div>
@@ -73,7 +72,10 @@ onMounted(() => {
 }
 
 .animation-text {
+    width: 20rem;
     display: flex;
+    align-items: center;
+    justify-content: center;
     animation: come-in 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both, go-out 0.8s 2.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both
 }
 
@@ -110,9 +112,12 @@ onMounted(() => {
 @keyframes fade-out {
     0% {
         opacity: 1;
+        visibility: hidden;
     }
     100% {
         opacity: 0;
+        visibility: hidden;
+        display: none;
     }
 }
 
@@ -143,6 +148,7 @@ onMounted(() => {
 }
 
 .letters {
+    width: 48px;
     margin-right: 1rem;
 }
 
