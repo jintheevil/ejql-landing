@@ -226,12 +226,21 @@ const useImage = (url) => {
         visibility: visible;
         top: -40px;
         left: calc(50% + 60px);
+
+      @media (max-width: 1024px) {
+        visibility: hidden;
+      }
     }
     .tech-stack-card {
         opacity: 1;
         visibility: visible;
         top: -224px;
         left: 48px;
+
+      @media (max-width: 1024px) {
+        top: -160px;
+        left: 0;
+      }
     }
     margin: 4rem 0;
     transition: margin 0.5s ease;
@@ -263,12 +272,21 @@ const useImage = (url) => {
         rotate: 90deg;
         top: 48px;
         right: -52px;
+
+      @media (max-width: 1024px) {
+        visibility: hidden;
+      }
     }
     .tech-stack-card {
         opacity: 1;
         visibility: visible;
         top: 8px;
         right: -350px;
+
+      @media (max-width: 1024px) {
+        top: 4rem;
+        left: 2rem;
+      }
     }
     margin: 4rem 0;
     padding-bottom: 4rem;
@@ -279,7 +297,7 @@ const useImage = (url) => {
 .patty {
   z-index: 1;
   margin-top: -4rem;
-  padding: 0;
+  padding: 1rem;
   transition: padding 0.5s ease;
     position: relative;
 
@@ -301,12 +319,21 @@ const useImage = (url) => {
         rotate: 90deg;
         top: 112px;
         left: 0;
+
+      @media (max-width: 1024px) {
+        visibility: hidden;
+      }
     }
     .tech-stack-card {
         opacity: 1;
         visibility: visible;
         top: 64px;
         left: -350px;
+
+      @media (max-width: 1024px) {
+        top: 6rem;
+        left: 0;
+      }
     }
     padding: 4rem 0;
     margin-top: 0;
@@ -339,12 +366,21 @@ const useImage = (url) => {
         visibility: visible;
         top: 56px;
         left: 48px;
+
+      @media (max-width: 1024px) {
+        visibility: hidden;
+      }
     }
     .tech-stack-card {
         opacity: 1;
         visibility: visible;
         top: 106px;
         right: 32px;
+
+      @media (max-width: 1024px) {
+        top: 2rem;
+        right: -0.5rem;
+      }
     }
     margin-top: 4rem;
     padding-bottom: 2rem;

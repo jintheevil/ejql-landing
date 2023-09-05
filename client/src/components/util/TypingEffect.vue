@@ -5,8 +5,8 @@ import {useSettingsStore} from "../../store/SettingsModel.js";
 let displayText = ref("");
 
 const texts = [
-    "HI, I'M EUGENE.",
-    "WELCOME."
+    "HI, I'M EUGENE",
+    "WELCOME"
 ];
 
 let textIndex = ref(0);
@@ -68,13 +68,22 @@ onBeforeUnmount(() => {
 
 <template>
     <div>
-        <h1 v-if="displayText">{{ displayText }}</h1>
+        <h1 class="landing-text" v-if="displayText">{{ displayText }}</h1>
         <h1 v-else class="placeholder-landing">Hi, I'm Eugene.</h1>
     </div>
 </template>
 
 <style scoped lang="scss">
+.landing-text {
+  @media (max-width: 375px) {
+    font-size: 1.8rem !important;
+  }
+}
+
 .placeholder-landing {
   visibility: hidden;
+  @media (max-width: 375px) {
+    font-size: 1.8rem !important;
+  }
 }
 </style>

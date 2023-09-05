@@ -1,7 +1,7 @@
 <script setup>
 import Flicking from "@egjs/vue3-flicking";
 import "@egjs/vue3-flicking/dist/flicking.css";
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 
 const flicking = ref(null)
 const flickLeft = () => {
@@ -13,6 +13,13 @@ const flickLeft = () => {
 const flickRight = () => {
     flicking.value.next();
 }
+
+onMounted(() => {
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+});
 </script>
 
 <template>

@@ -5,14 +5,16 @@ import InitialLanding from "./components/util/InitialLanding.vue";
 </script>
 
 <template>
-    <Header></Header>
-    <InitialLanding></InitialLanding>
-    <router-view v-slot="{ Component }">
+    <div class="body">
+      <Header class="header-sticky"></Header>
+      <InitialLanding></InitialLanding>
+      <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
-            <component :is="Component" :key="$route.fullPath" />
+          <component :is="Component" :key="$route.fullPath" />
         </transition>
-    </router-view>
-    <Footer></Footer>
+      </router-view>
+      <Footer></Footer>
+    </div>
 </template>
 
 <style scoped>
@@ -26,5 +28,11 @@ import InitialLanding from "./components/util/InitialLanding.vue";
 
 .fade-enter-to, .fade-leave-from {
   opacity: 1;
+}
+
+.body {
+  position: relative;
+  height: 100vh;
+  overflow: auto;
 }
 </style>

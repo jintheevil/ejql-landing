@@ -1,12 +1,21 @@
 <script setup>
-import { computed } from "vue";
+import {computed, ref} from "vue";
 import { useRouter } from "vue-router";
 import Menu from "./util/Menu.vue";
 import {useSettingsStore} from "../store/SettingsModel.js";
+import Modal from "./util/Modal.vue";
 
 const currentRouter = computed(() => {
   return useRouter().currentRoute.value.name;
 });
+
+const isMobile = computed(() => {
+  return window.innerWidth <= 1024;
+})
+
+const toggleModal = () => {
+  useSettingsStore().setModal();
+}
 
 const navItems = [
     {
@@ -45,7 +54,10 @@ const navItems = [
 <template>
   <div class="container-fluid main-header">
       <div class="navbar-brand">
-          <h4 class="hello-logo slide-in-right" >WELCOME!</h4>
+          <h4 v-if="!isMobile" class="hello-logo slide-in-right" >WELCOME!</h4>
+          <div v-else>
+            <menu-icon @click="toggleModal" class="menu-icon slide-in-right"></menu-icon>
+          </div>
       </div>
       <div class="nav-bar slide-in-bottom">
           <div v-for="navItem in navItems" class="nav-item">
@@ -53,6 +65,7 @@ const navItems = [
           </div>
       </div>
       <Menu class="slide-in-left"></Menu>
+      <Modal v-if="useSettingsStore().getModal" :navItems="navItems"></Modal>
   </div>
 </template>
 
@@ -78,11 +91,6 @@ const navItems = [
 
     @media (max-width: 1181px) {
         padding: 0 1rem;
-        //position: sticky;
-        //top: 0;
-        //left: 0;
-        //z-index: 2;
-        //background: var(--backgroundColor);
     }
 }
 .nav-bar {
@@ -111,6 +119,13 @@ const navItems = [
         transform: none;
     }
 }
+
+.menu-icon {
+  color: var(--textColor);
+  height: 4rem;
+  width: 4rem;
+}
+
 .active {
     color: var(--accentColor);
     opacity: 1;

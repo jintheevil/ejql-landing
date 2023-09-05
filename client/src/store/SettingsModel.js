@@ -4,11 +4,13 @@ export const useSettingsStore = defineStore('settings', {
     state: () => ({
         darkMode: true,
         visited: false,
+        modal: false,
     }),
 
     getters: {
         getMode: (state) => state.darkMode,
         getVisited: (state) => state.visited,
+        getModal: (state) => state.modal,
     },
 
     actions: {
@@ -17,6 +19,9 @@ export const useSettingsStore = defineStore('settings', {
         },
         setVisited() {
             this.visited = true;
+        },
+        setModal() {
+            this.modal = !this.modal;
         }
     }
 })

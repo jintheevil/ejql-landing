@@ -4,6 +4,7 @@ import TypingEffect from "../util/TypingEffect.vue";
 import {onMounted} from "vue";
 import {useSettingsStore} from "../../store/SettingsModel.js";
 import BurgerStack from "../util/BurgerStack.vue";
+import MarqueeServices from "../util/MarqueeServices.vue";
 
 const goTo = (page) => {
     router.push(page);
@@ -37,6 +38,7 @@ onMounted(() => {
             </div>
         </div>
         <BurgerStack></BurgerStack>
+        <MarqueeServices></MarqueeServices>
     </div>
 </template>
 

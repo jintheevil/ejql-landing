@@ -112,6 +112,13 @@ const services = [
 const useImage = (url) => {
   return new URL(url, import.meta.url).href
 }
+
+onMounted(() => {
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+});
 </script>
 
 <template>
