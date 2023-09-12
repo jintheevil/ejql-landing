@@ -32,7 +32,7 @@ import InitialLanding from "./components/util/InitialLanding.vue";
 
 .body {
   position: relative;
-  height: 100vh;
+  height: 100dvh;
   overflow: auto;
 }
 </style>

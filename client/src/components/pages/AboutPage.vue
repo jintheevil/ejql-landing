@@ -40,22 +40,28 @@ onMounted(() => {
 <style lang="scss" scoped>
 .section2-area {
   margin: 0 -10rem;
-  min-height: calc(100vh - 5rem);
+  min-height: calc(100dvh - 5rem);
   background: transparent;
   display: grid;
   grid-template-columns: 1fr 1fr;
   place-items: center;
-
-  @media (max-width: 1181px) {
-    margin: 0;
-    height: auto;
-    padding: 1rem;
-    grid-template-columns: 1fr;
-    gap: 4rem;
+}
+@media (max-width: 1181px) {
+  .section2-area {
+    margin: 0 !important;
+    height: auto !important;
+    padding: 1rem !important;
+    grid-template-columns: 1fr !important;
+    gap: 4rem !important;
   }
-
-  @media (min-width: 1181px) {
-    padding: 0 10rem;
+  .card-border {
+    height: 50vw !important;
+    width: 50vw !important;
+  }
+}
+@media (min-width: 1181px) {
+  .section2-area {
+    padding: 0 10rem !important;
   }
 }
 .card-border {
@@ -63,11 +69,6 @@ onMounted(() => {
   height: 30vw;
   width: 30vw;
   padding: 0.5rem;
-
-  @media (max-width: 1181px) {
-    height: 50vw;
-    width: 50vw;
-  }
 }
 .card-body {
   background: var(--textColor);
@@ -77,10 +78,6 @@ onMounted(() => {
 .introduction-contact {
   color: var(--textColor);
   overflow: hidden;
-
-  @media (max-width: 600px) {
-    padding-right: 0;
-  }
   h2 {
     font-size: 2rem;
     line-height: 3rem;
@@ -92,6 +89,15 @@ onMounted(() => {
     overflow-wrap: break-word;
   }
 }
+@media (max-width: 600px) {
+  .introduction-contact {
+    padding-right: 0 !important;
+  }
+  .introduction-card {
+    margin-right: 0 !important;
+    grid-template-columns: 0.2fr 0.7fr !important;
+  }
+}
 .introduction-card {
   margin-top: 3rem;
   margin-right: 15rem;
@@ -99,11 +105,6 @@ onMounted(() => {
   place-items: flex-start;
   grid-template-columns: 0.3fr 0.7fr;
   gap: 1rem;
-
-  @media(max-width: 600px) {
-    margin-right: 0;
-    grid-template-columns: 0.2fr 0.7fr;
-  }
 }
 
 .slide-in-left {

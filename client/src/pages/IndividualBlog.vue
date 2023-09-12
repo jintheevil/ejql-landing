@@ -38,7 +38,7 @@ onMounted( async () => {
 
 <style scoped>
 .blog-section {
-    min-height: 100vh;
+    min-height: 100dvh;
     color: var(--textColor);
     padding: 5rem;
 }

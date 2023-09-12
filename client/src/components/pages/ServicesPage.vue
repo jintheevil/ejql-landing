@@ -76,36 +76,43 @@ const activeCards = computed(() => {
     return services.map((_, index) => index === activeCardIndex.value);
 });
 
+import fullStackIcon from '/assets/services-icons/programming.png';
+import UIDesignIcon from '/assets/services-icons/ui-design.png';
+import UXOptiIcon from '/assets/services-icons/ux-design.png';
+import ResponsiveIcon from '/assets/services-icons/ux.png';
+import DatabaseIcon from '/assets/services-icons/database.png';
+import SatisfactionIcon from '/assets/services-icons/smile.png';
+
 const services = [
   {
     name: 'Full-Stack Solutions',
     description: 'From frontend to backend, you get the whole package done.',
-    icon: '../../assets/services-icons/programming.png',
+    icon: fullStackIcon,
   },
   {
     name: 'UI Design',
     description: 'Providing you with elegant and modern UI designs for your website.',
-    icon: '../../assets/services-icons/ui-design.png',
+    icon: UIDesignIcon,
   },
   {
     name: 'UX Optimization',
     description: 'User experience is the key to success and optimization is the name of the game.',
-    icon: '../../assets/services-icons/ux-design.png',
+    icon: UXOptiIcon,
   },
   {
     name: 'Responsive',
     description: 'Mobile or desktop, I got you covered.',
-    icon: '../../assets/services-icons/ux.png',
+    icon: ResponsiveIcon,
   },
   {
     name: 'Database Management',
     description: 'Ensuring that your user data is safe and secure at all times.',
-    icon: '../../assets/services-icons/database.png',
+    icon: DatabaseIcon,
   },
   {
     name: 'Satisfaction Guaranteed',
     description: 'A 100% satisfaction guarantee.',
-    icon: '../../assets/services-icons/smile.png',
+    icon: SatisfactionIcon,
   }
 ]
 
@@ -127,7 +134,7 @@ onMounted(() => {
       <div ref="servicesContainer" class="services-container" @mousedown="startDrag" @mouseleave="stopDrag" @mouseup="stopDrag" @mousemove="doDrag">
           <div ref="cardContainer" v-for="(service, index) in services" :key="index" class="services-card-container">
               <div class="services-card" :class="{ active: activeCards[index] }">
-                  <img class="services-icon" :alt="service.name" :src="useImage(service.icon)"/>
+                  <img class="services-icon" :alt="service.name" :src="service.icon"/>
                   <h2>{{service.name}}</h2>
                   <p>{{service.description}}</p>
               </div>
@@ -140,22 +147,37 @@ onMounted(() => {
 .section3-area {
   display: grid;
   place-items: center;
-  min-height: 100vh;
+  min-height: 100dvh;
   padding: 2rem 0;
-
-  @media (max-width: 1181px) {
-    padding: 1rem;
+}
+@media (max-width: 1181px) {
+  .section3-area {
+    padding: 1rem !important;
+  }
+  .services-h1 {
+    font-size: 2rem !important;
+    line-height: 3rem !important;
+  }
+  .services-container {
+    padding: 0 !important;
+  }
+  .services-card {
+    width: 100% !important;
+    .services-icon {
+      height: 15vw !important;
+      width: auto !important;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .services-container {
+    grid-template-columns: 1fr !important;
   }
 }
 .services-h1 {
   color: var(--accentColor);
   font-size: 3rem;
   line-height: 4.5rem;
-
-  @media (max-width: 1181px) {
-    font-size: 2rem;
-    line-height: 3rem;
-  }
 }
 .services-container {
   display: grid;
@@ -167,19 +189,10 @@ onMounted(() => {
     scroll-snap-type: y mandatory;
     cursor: grab;
     will-change: scroll-position;
-
     &.active {
         cursor: grabbing;
         user-select: none;
     }
-
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-  }
-
-  @media (max-width: 1181px) {
-    padding: 0;
-  }
 }
 .services-card-container {
   display: grid;
@@ -208,20 +221,10 @@ onMounted(() => {
     transform: scale(0.9);
     opacity: 0.6;
     transition: transform 0.4s ease;
-
-  @media (max-width: 1181px) {
-    width: 100%;
-  }
-
   .services-icon {
     height: 5vw;
     width: auto;
     margin-bottom: 2rem;
-
-    @media (max-width: 1181px) {
-      height: 15vw;
-      width: auto;
-    }
   }
 }
 

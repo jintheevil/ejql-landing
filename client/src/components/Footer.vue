@@ -47,23 +47,36 @@
     display: grid;
     place-items: center;
     background: var(--backgroundColor);
-    padding-top: 2rem;
+    padding: 2rem;
     color: var(--textColor);
     margin-left: -10rem;
     position: relative;
+}
+@media (max-width: 1181px) {
+  .main-footer {
+    margin-left: 0;
+  }
+}
 
-    @media (max-width: 1181px) {
-        margin-left: 0;
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+  small {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
+  .icon-color{
+    svg {
+      height: 2rem;
+      width: 2rem;
     }
+  }
 }
 h2 {
     font-size: 2rem;
     line-height: 3rem;
-
-    @media (max-width: 600px) {
-        font-size: 1.5rem;
-        line-height: 2.25rem;
-    }
 }
 .socials {
     display: flex;
@@ -72,14 +85,9 @@ h2 {
     padding: 2rem;
 }
 small {
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 1.5rem;
     padding-bottom: 1.5rem;
-
-    @media (max-width: 600px) {
-        font-size: 0.8rem;
-        line-height: 1.2rem;
-    }
 }
 .icon-color {
     color: var(--textColor);
@@ -87,11 +95,6 @@ small {
     svg {
         height: 3rem;
         width: 3rem;
-
-        @media (max-width: 600px) {
-            height: 2rem;
-            width: 2rem;
-        }
     }
 
     &:hover {

@@ -53,7 +53,7 @@ onMounted(() => {
 
 <style scoped>
 .initialVisit {
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     position: fixed;
     top: 0;
@@ -65,10 +65,11 @@ onMounted(() => {
     place-items: center;
     animation: fade-out 0.5s 4s ease-out forwards;
     overflow: hidden;
-
-    @media (max-width: 1181px) {
-        margin-left: 0;
-    }
+}
+@media (max-width: 1181px) {
+  .initialVisit {
+    margin-left: 0;
+  }
 }
 
 .animation-text {

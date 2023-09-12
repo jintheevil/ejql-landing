@@ -5,6 +5,7 @@ import {onMounted} from "vue";
 import {useSettingsStore} from "../../store/SettingsModel.js";
 import BurgerStack from "../util/BurgerStack.vue";
 import MarqueeServices from "../util/MarqueeServices.vue";
+import ProjectSlideshow from "../util/ProjectSlideshow.vue";
 
 const goTo = (page) => {
     router.push(page);
@@ -39,24 +40,19 @@ onMounted(() => {
         </div>
         <BurgerStack></BurgerStack>
         <MarqueeServices></MarqueeServices>
+        <ProjectSlideshow></ProjectSlideshow>
     </div>
 </template>
 
 <style lang="scss" scoped>
 .section1-area {
-    min-height: 100vh;
+    min-height: 100dvh;
     padding: 5rem;
     color: var(--textColor);
     overflow: hidden;
     display: grid;
     place-items: center;
     position: relative;
-
-    @media (max-width: 600px) {
-        padding: 1rem;
-        height: calc(100vh);
-        width: 100%;
-    }
     h1 {
         font-size: 3rem;
         line-height: 4.5rem;
@@ -73,6 +69,13 @@ onMounted(() => {
         line-height: 2.25rem;
         overflow-wrap: break-word;
     }
+}
+@media (max-width: 600px) {
+  .section1-area {
+    padding: 1rem;
+    height: calc(100dvh);
+    width: 100%;
+  }
 }
 .accentFont {
     color: var(--accentColor);

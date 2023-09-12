@@ -88,18 +88,27 @@ const navItems = [
     left: 0;
     z-index: 9;
     background: var(--backgroundColor);
-
-    @media (max-width: 1181px) {
-        padding: 0 1rem;
-    }
+}
+@media (max-width: 1181px) {
+  .main-header {
+    padding: 0 1rem;
+  }
+  .nav-bar {
+    display: none !important;
+  }
+  .nav-link:hover {
+    transform: none;
+  }
+  .dropdown {
+    display: none;
+  }
+  .desktop-toggle {
+    display: none;
+  }
 }
 .nav-bar {
     display: flex;
     gap: 2rem;
-
-    @media (max-width: 1181px) {
-        display: none;
-    }
 }
 .nav-link{
     color: var(--accentColor);
@@ -114,10 +123,6 @@ const navItems = [
     transform: translateY(-0.5rem);
     transition: all 0.125s ease-in;
     opacity: 1;
-
-    @media (max-width: 1181px) {
-        transform: none;
-    }
 }
 
 .menu-icon {
@@ -133,10 +138,6 @@ const navItems = [
 .dropdown {
     position: relative;
     display: inline-block;
-
-    @media (min-width: 1181px) {
-        display: none;
-    }
 }
 
 .dropdown-toggle {
@@ -177,9 +178,6 @@ const navItems = [
 }
 
 .desktop-toggle {
-    @media (max-width: 1181px) {
-        display: none;
-    }
 }
 
 .slide-in-left {

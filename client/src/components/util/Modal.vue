@@ -17,7 +17,7 @@ defineProps({
 
 <style lang="scss" scoped>
 .modal-container {
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   background: #333333;
   opacity: 0.4;
@@ -36,7 +36,7 @@ defineProps({
   }
 }
 .modal-box {
-  height: 100vh;
+  height: 100dvh;
   padding: 2rem;
   background: var(--backgroundColor);
   position: absolute;
@@ -76,8 +76,9 @@ defineProps({
   transform: translateY(-0.5rem);
   transition: all 0.125s ease-in;
   opacity: 1;
-
-  @media (max-width: 1181px) {
+}
+@media (max-width: 1181px) {
+  .nav-link:hover {
     transform: none;
   }
 }

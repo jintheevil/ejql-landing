@@ -39,7 +39,6 @@ onMounted(async () => {
         <div class="blog-area">
             <div v-for="blog in blogs" class="blog-post" @click="goToBlog(blog)">
                 <div class="blog-image">
-                    <img src="..." alt="">
                 </div>
                 <div class="blog-words">
                     <h2>
@@ -61,15 +60,19 @@ onMounted(async () => {
 
 <style scoped>
 .blog-spot {
-    min-height: 100vh;
+    min-height: 100dvh;
     padding: 2rem 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    @media (max-width: 600px) {
-        padding: 1rem;
-    }
+}
+@media (max-width: 600px) {
+  .blog-spot {
+    padding: 1rem;
+  }
+  .blog-post {
+    grid-template-columns: 1fr;
+  }
 }
 .blog-area {
     display: grid;
@@ -83,10 +86,6 @@ onMounted(async () => {
     grid-template-columns: 0.25fr 1.75fr;
     background: var(--secondaryColor);
     border-radius: 0.25rem;
-
-    @media (max-width: 600px) {
-        grid-template-columns: 1fr;
-    }
 }
 .blog-image {
     height: 12rem;

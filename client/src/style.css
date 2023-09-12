@@ -1,16 +1,16 @@
 :root {
   --textColor: #ffffff;
   --backgroundColor: #1c1a23;
-  --primaryColor: #212121;
-  --secondaryColor: #f5f5f5;
-  --accentColor: #4281ff;
+  --primaryColor: #212121 !important;
+  --secondaryColor: #f5f5f5 !important;
+  --accentColor: #4281ff !important;
 
-  --headerColor: #003d73;
-  --lightModeBackground: #f5f5f5;
-  --darkModeBackground: #1c1a23;
+  --headerColor: #003d73 !important;
+  --lightModeBackground: #f5f5f5 !important;
+  --darkModeBackground: #1c1a23 !important;
 
-  --darkModeText: #f5f5f5;
-  --lightModeText: #212121;
+  --darkModeText: #f5f5f5 !important;
+  --lightModeText: #212121 !important;
 
   line-height: 1.5;
   font-weight: 400;

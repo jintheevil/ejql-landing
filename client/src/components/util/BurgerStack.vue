@@ -1,113 +1,143 @@
 <script setup>
+
+import HTMLIcon from '/assets/stack/front/html5.svg';
+import CSSIcon from '/assets/stack/front/css3.svg';
+import BootstrapIcon from '/assets/stack/front/bootstrap5.svg';
+import SASSIcon from '/assets/stack/front/sass.svg';
+import TailwindIcon from '/assets/stack/front/tailwind.svg';
+import IonicIcon from '/assets/stack/front/ionic.svg';
+import ReactIcon from '/assets/stack/front/reactjs.svg';
+import VueIcon from '/assets/stack/front/vuejs.svg';
+
 const frontend = [
     {
         name: 'HTML',
-        img: '../../assets/stack/front/html5.svg'
+        img: HTMLIcon
     },
     {
         name: 'CSS',
-        img: '../../assets/stack/front/css3.svg'
+        img: CSSIcon
     },
     {
         name: 'Bootstrap',
-        img: '../../assets/stack/front/bootstrap5.svg'
+        img: BootstrapIcon
     },
     {
         name: 'SASS',
-        img: '../../assets/stack/front/sass.svg'
+        img: SASSIcon
     },
     {
         name: 'TailwindCss',
-        img: '../../assets/stack/front/tailwind.svg'
+        img: TailwindIcon
     },
     {
         name: 'Ionic',
-        img: '../../assets/stack/front/ionic.svg'
+        img: IonicIcon
     },
     {
         name: 'ReactJs',
-        img: '../../assets/stack/front/reactjs.svg'
+        img: ReactIcon
     },
     {
         name: 'VueJs',
-        img: '../../assets/stack/front/vuejs.svg'
+        img: VueIcon
     }
 ]
+
+import MySQLIcon from '/assets/stack/back/mysql.svg';
+import NodeJSIcon from '/assets/stack/back/nodejs.svg';
+import LaravelIcon from '/assets/stack/back/laravel.svg';
+import MongoDBIcon from '/assets/stack/back/mongodb.svg';
+import PostgreSQLIcon from '/assets/stack/back/postfresql.svg';
+import PostmanIcon from '/assets/stack/back/postman.svg';
 
 const backend = [
     {
         name: 'MySQL',
-        img: '../../assets/stack/back/mysql.svg'
+        img: MySQLIcon
     },
     {
         name: 'NodeJs',
-        img: '../../assets/stack/back/nodejs.svg'
+        img: NodeJSIcon
     },
     {
         name: 'Laravel',
-        img: '../../assets/stack/back/laravel.svg'
+        img: LaravelIcon
     },
     {
         name: 'MongoDB',
-        img: '../../assets/stack/back/mongodb.svg'
+        img: MongoDBIcon
     },
     {
         name: 'PostgreSQL',
-        img: '../../assets/stack/back/postfresql.svg'
+        img: PostgreSQLIcon
     },
     {
         name: 'Postman',
-        img: '../../assets/stack/back/postman.svg'
+        img: PostmanIcon
     }
 ]
+
+import JSIcon from '/assets/stack/languages/js.svg';
+import TSIcon from '/assets/stack/languages/typescript.svg';
+import PHPIcon from '/assets/stack/languages/php.svg';
+import PythonIcon from '/assets/stack/languages/python.svg';
 
 const languages = [
     {
         name: 'JavaScript',
-        img: '../../assets/stack/languages/js.svg'
+        img: JSIcon
     },
     {
         name: 'TypeScript',
-        img: '../../assets/stack/languages/typescript.svg'
+        img: TSIcon
     },
     {
         name: 'PHP',
-        img: '../../assets/stack/languages/php.svg'
+        img: PHPIcon
     },
     {
         name: 'Python',
-        img: '../../assets/stack/languages/python.svg'
+        img: PythonIcon
     }
 ]
+
+import AWSIcon from '/assets/stack/dev/aws.svg';
+import EC2Icon from '/assets/stack/dev/aws-ec2.svg';
+import FirebaseIcon from '/assets/stack/dev/firebase.svg';
+import GitIcon from '/assets/stack/dev/git.svg';
+import GitHubIcon from '/assets/stack/dev/github.svg';
+import GitLabIcon from '/assets/stack/dev/gitlab.svg';
+import WordPressIcon from '/assets/stack/dev/wordpress.svg';
 
 const devops = [
     {
         name: 'AWS',
-        img: '../../assets/stack/dev/aws.svg'
+        img: AWSIcon
     },
     {
         name: 'AWS-EC2',
-        img: '../../assets/stack/dev/aws-ec2.svg'
+        img: EC2Icon
     },
     {
         name: 'Firebase',
-        img: '../../assets/stack/dev/firebase.svg'
+        img: FirebaseIcon
     },
     {
         name: 'Git',
-        img: '../../assets/stack/dev/git.svg'
+        img: GitIcon
     },
     {
         name: 'GitHub',
-        img: '../../assets/stack/dev/github.svg'
+        img: GitHubIcon
     },
     {
         name: 'GitLab',
-        img: '../../assets/stack/dev/gitlab.svg'
+        img: GitLabIcon
     },
     {
         name: 'WordPress',
-        img: '../../assets/stack/dev/wordpress.svg'
+        img: WordPressIcon
     }
 ]
 
@@ -141,7 +171,7 @@ const useImage = (url) => {
               <div class="connector-line"></div>
               <div class="tech-stack-card">
                   <h2>FRONTEND</h2>
-                  <img v-for="tech in frontend" :alt="tech.name" height="96" width="96" class="tech-icon" :src="useImage(tech.img)"/>
+                  <img v-for="tech in frontend" :alt="tech.name" height="96" width="96" class="tech-icon" :src="tech.img"/>
                   <!-- Stack details here -->
               </div>
           </div>
@@ -152,7 +182,7 @@ const useImage = (url) => {
               <div class="connector-line"></div>
               <div class="tech-stack-card">
                   <h2>BACKEND</h2>
-                  <img v-for="tech in backend" :alt="tech.name" height="96" width="96" class="tech-icon" :src="useImage(tech.img)"/>
+                  <img v-for="tech in backend" :alt="tech.name" height="96" width="96" class="tech-icon" :src="tech.img"/>
                   <!-- Stack details here -->
               </div>
           </div>
@@ -163,7 +193,7 @@ const useImage = (url) => {
               <div class="connector-line top-bun-connector"></div>
               <div class="tech-stack-card">
                   <h2>LANGUAGES</h2>
-                  <img v-for="tech in languages" :alt="tech.name" height="96" width="96" class="tech-icon" :src="useImage(tech.img)"/>
+                  <img v-for="tech in languages" :alt="tech.name" height="96" width="96" class="tech-icon" :src="tech.img"/>
                   <!-- Stack details here -->
               </div>
           </div>
@@ -174,7 +204,7 @@ const useImage = (url) => {
               <div class="connector-line"></div>
               <div class="tech-stack-card">
                   <h2>DEVOPS</h2>
-                  <img v-for="tech in devops" :alt="tech.name" height="96" width="96" class="tech-icon" :src="useImage(tech.img)"/>
+                  <img v-for="tech in devops" :alt="tech.name" height="96" width="96" class="tech-icon" :src="tech.img"/>
                   <!-- Stack details here -->
               </div>
           </div>
@@ -184,7 +214,7 @@ const useImage = (url) => {
 
 <style lang="scss" scoped>
 .page-container {
-    height: 100vh;
+    height: 100dvh;
 }
 
 .burger-header {
@@ -202,7 +232,52 @@ const useImage = (url) => {
   width: max-content;
   margin: auto;
 }
-
+@media (max-width: 1024px) {
+  .top-bun {
+    &:hover {
+      .connector-line {
+        visibility: hidden;
+      }
+      .tech-stack-card {
+        top: -160px;
+        left: 0;
+      }
+    }
+  }
+  .lettuce {
+    &:hover {
+      .connector-line {
+        visibility: hidden;
+      }
+      .tech-stack-card {
+        top: 4rem;
+        left: 2rem;
+      }
+    }
+  }
+  .patty {
+    &:hover {
+      .connector-line {
+        visibility: hidden;
+      }
+      .tech-stack-card {
+        top: 6rem;
+        left: 0;
+      }
+    }
+  }
+  .btm-bun {
+    &:hover {
+      .connector-line {
+        visibility: hidden;
+      }
+      .tech-stack-card {
+        top: 2rem;
+        right: -0.5rem;
+      }
+    }
+  }
+}
 .top-bun {
   z-index: 4;
   margin: 0;
@@ -226,21 +301,12 @@ const useImage = (url) => {
         visibility: visible;
         top: -40px;
         left: calc(50% + 60px);
-
-      @media (max-width: 1024px) {
-        visibility: hidden;
-      }
     }
     .tech-stack-card {
         opacity: 1;
         visibility: visible;
         top: -224px;
         left: 48px;
-
-      @media (max-width: 1024px) {
-        top: -160px;
-        left: 0;
-      }
     }
     margin: 4rem 0;
     transition: margin 0.5s ease;
@@ -272,21 +338,12 @@ const useImage = (url) => {
         rotate: 90deg;
         top: 48px;
         right: -52px;
-
-      @media (max-width: 1024px) {
-        visibility: hidden;
-      }
     }
     .tech-stack-card {
         opacity: 1;
         visibility: visible;
         top: 8px;
         right: -350px;
-
-      @media (max-width: 1024px) {
-        top: 4rem;
-        left: 2rem;
-      }
     }
     margin: 4rem 0;
     padding-bottom: 4rem;
@@ -319,21 +376,12 @@ const useImage = (url) => {
         rotate: 90deg;
         top: 112px;
         left: 0;
-
-      @media (max-width: 1024px) {
-        visibility: hidden;
-      }
     }
     .tech-stack-card {
         opacity: 1;
         visibility: visible;
         top: 64px;
         left: -350px;
-
-      @media (max-width: 1024px) {
-        top: 6rem;
-        left: 0;
-      }
     }
     padding: 4rem 0;
     margin-top: 0;
@@ -366,21 +414,12 @@ const useImage = (url) => {
         visibility: visible;
         top: 56px;
         left: 48px;
-
-      @media (max-width: 1024px) {
-        visibility: hidden;
-      }
     }
     .tech-stack-card {
         opacity: 1;
         visibility: visible;
         top: 106px;
         right: 32px;
-
-      @media (max-width: 1024px) {
-        top: 2rem;
-        right: -0.5rem;
-      }
     }
     margin-top: 4rem;
     padding-bottom: 2rem;

@@ -27,14 +27,16 @@ const services = [
 
 <style scoped lang="scss">
 .page-container {
-  height: 100vh;
+  height: calc(100dvh - 5rem);
   width: 100vw;
   overflow: hidden;
   margin-left: -10rem;
   display: grid;
   gap: 4rem;
-
-  @media (max-width: 1424px) {
+  grid-template-rows: 0.3fr 1fr 0.3fr;
+}
+@media (max-width: 1424px) {
+  .page-container {
     margin-left: 0;
   }
 }
@@ -49,6 +51,7 @@ const services = [
 .text-wrapper {
   display: flex;
   align-items: center;
+  height: 1.5rem;
 
   &:hover {
     animation-play-state: paused;
@@ -83,17 +86,17 @@ const services = [
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
 @keyframes move-ltr {
   0% {
-    transform: translateX(-25%);
+    transform: translateX(-75%);
   }
 
   100% {
-    transform: translateX(50%);
+    transform: translateX(0%);
   }
 }
 </style>

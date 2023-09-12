@@ -74,16 +74,16 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped lang="scss">
-.landing-text {
-  @media (max-width: 375px) {
+@media (max-width: 375px) {
+  .landing-text {
+    font-size: 1.8rem !important;
+  }
+  .placeholder-landing {
     font-size: 1.8rem !important;
   }
 }
 
 .placeholder-landing {
   visibility: hidden;
-  @media (max-width: 375px) {
-    font-size: 1.8rem !important;
-  }
 }
 </style>
